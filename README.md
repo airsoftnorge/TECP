@@ -27,3 +27,5 @@ Responsible for sending spawn point information over the meshtastic network.
 
 Raspberry pi, meshtastic device
 
+# How it should look when completed
+![image](https://user-images.githubusercontent.com/25975089/224479390-c94bbf40-a6f5-4022-a651-db9e5723f404.png)
