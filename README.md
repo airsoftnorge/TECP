@@ -53,6 +53,12 @@ Non-capturable points.
 Rally points are only seen to the color they are configured for, acts as a moveable spawn point for one side.
 Can be disabled by other team if found and must be re-enabled to work.
 
+# Ideas for future expansion
+
+* Activate spawn points based on currently owned points.
+* Force capture order
+* Have points revert to neutral after a set time
+
 
 ### How it should look when completed
 Friendly is always cyan, enemy is always red, neutral is always green and unknown is always yellow.
