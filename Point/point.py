@@ -52,7 +52,6 @@ def sendinitialstate():
     # send the message in meshtastic
     interface.sendData(message)
 
-
 sendinitialstate()
 
 # loop forever
