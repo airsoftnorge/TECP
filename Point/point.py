@@ -1,3 +1,14 @@
+#
+#     ______   ______   ______   ____
+#    /_  __/  / ____/  / ____/  / __ \
+#     / /    / __/    / /      / /_/ /
+#    / /    / /___   / /___   / ____/
+#   /_/    /_____/   \____/  /_/
+#
+#
+# There is no differentiation based on mode currently, as this is expected to be for expansion or mostly handled by the gateway.
+
+
 import sys
 import json
 import time
