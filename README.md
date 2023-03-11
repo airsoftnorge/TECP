@@ -1,8 +1,14 @@
 # Pre-pre-pre-pre-pre-alpha
 Do not use or try to make sense of.. public for sanity checking reasons. 
 
-# TECP 
-**T**AK **E**nabled **C**apture **P**oints for airsoft games
+# **T**AK **E**nabled **C**apture **P**oints for airsoft games
+```
+     ______   ______   ______   ____ 
+    /_  __/  / ____/  / ____/  / __ \
+     / /    / __/    / /      / /_/ /
+    / /    / /___   / /___   / ____/ 
+   /_/    /_____/   \____/  /_/      
+```                                  
 
 # Idea
 Have physical points of interest that can be captured and have them reflect which teams hold which points on their TAK EUD.
