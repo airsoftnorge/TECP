@@ -11,15 +11,16 @@ import meshtastic.serial_interface
 # 22 being blue
 # 27 being yellow (or neutral)
 
-red_button = Button(17, pull_up=False, bounce_time=0.1)
-blue_button = Button(22, pull_up=False, bounce_time=0.1)
-yellow_button = Button(27, pull_up=False, bounce_time=0.1)
+red_button = Button(17, bounce_time=0.2)
+blue_button = Button(22, bounce_time=0.2)
+yellow_button = Button(27, bounce_time=0.2)
 
-# set up dummy variables to be loaded from json
+# Setup all default values:
 name = ""
 mode = ""
 capture_time = ""
 startcolor = ""
+start_time = 0
 
 # load the configuration data from the JSON file
 with open("config.json", "r") as f:
@@ -28,13 +29,6 @@ with open("config.json", "r") as f:
 # Get keys from config
 for key, value in config_data.items():
     globals()[key] = value
-
-# set up initial button states
-button_states = {
-    17: False,
-    22: False,
-    27: False
-}
 
 # connect to meshtastic
 def sendmessage(poop):
@@ -46,7 +40,7 @@ def sendmessage(poop):
 def send_initial_state():
     print(f"Sending initial state of the point")
     # create a message to send in meshtastic
-    sendmessage(f"/mesh/points/{mode}/{name}/status/{startcolor}")
+    sendmessage(f"/mesh/points/{name}/{mode}/status/{startcolor}")
     print(f"Initial message sent")
 send_initial_state()
 
@@ -54,16 +48,43 @@ send_initial_state()
 print(f"Starting looping forever")
 
 while True:
-    # check if each button is pressed
-    for button, buttoncolor in [(red_button, "red"), (blue_button, "blue"), (yellow_button, "yellow")]:
-        if button.is_pressed:
-            # button is pressed, start counting
-            button_states[button.pin.number] = time.time()
-        elif button_states[button.pin.number] and time.time() - button_states[button.pin.number] >= capture_time:
-            # button was pressed for more than capturetime specified seconds
-            print(f"Button {buttoncolor} was pressed for over {capture_time} seconds")
-            # create a message to send in meshtastic
-            sendmessage(f"/mesh/points/{mode}/{name}/status/{buttoncolor}")
-            button_states[button.pin.number] = False
-    # wait a short time before checking again
+    # check if red_button is held
+    if red_button.is_pressed:
+        # check if this is the first time the button is pressed
+        if start_time == 0:
+            start_time = time.time()
+        # check if the button has been held for 30 seconds
+        if time.time() - start_time >= 30:
+            sendmessage(f"/mesh/points/{name}/{mode}/status/red")
+            # reset the start time
+            start_time = 0
+    # check if blue_button is held
+    elif blue_button.is_pressed:
+        # check if this is the first time the button is pressed
+        if start_time == 0:
+            start_time = time.time()
+        # check if the button has been held for 30 seconds
+        if time.time() - start_time >= 30:
+            print("Sending blue to meshtastic!")
+            sendmessage(f"/mesh/points/{name}/{mode}/status/blue")
+            # reset the start time
+            start_time = 0
+    elif yellow_button.is_pressed:
+        print("Yellow button detected")
+        # check if this is the first time the button is pressed
+        if start_time == 0:
+            start_time = time.time()
+        # check if the button has been held for 30 seconds
+        if time.time() - start_time >= 30:
+            print("Sending yellow to meshtastic!")
+            sendmessage(f"/mesh/points/{name}/{mode}/status/yellow")
+            # reset the start time
+            start_time = 0
+    # no button is pressed, reset start time
+    else:
+        start_time = 0
+
+    # sleep for a short amount of time to avoid consuming too much CPU
     time.sleep(0.1)
+
+
