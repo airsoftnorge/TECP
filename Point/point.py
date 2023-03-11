@@ -59,9 +59,9 @@ while True:
         if not GPIO.input(pin):
             # button is pressed, start counting
             button_states[pin] = time.time()
-        elif button_states[pin] and time.time() - button_states[pin] >= 30:
-            # button was pressed for more than 30 seconds
-            print(f"Button {buttoncolor} was pressed for over 30 seconds")
+        elif button_states[pin] and time.time() - button_states[pin] >= {capture_time}:
+            # button was pressed for more than capturetime specified seconds
+            print(f"Button {buttoncolor} was pressed for over {capture_time} seconds")
 
             # create a message to send in meshtastic
             message = MessageType.TEXT_ONLY.value()

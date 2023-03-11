@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4acf9b2a-2cc8-4522-bf15-007cebd0a7bb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Point/point.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="4acf9b2a-2cc8-4522-bf15-007cebd0a7bb" name="Changes" comment="Points v1">
+      <change beforePath="$PROJECT_DIR$/Point/point.py" beforeDir="false" afterPath="$PROJECT_DIR$/Point/point.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +54,23 @@
       <option name="presentableId" value="Default" />
       <updated>1678530083538</updated>
     </task>
+    <task id="LOCAL−00001" summary="Points v1">
+      <created>1678544821026</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1678544821026</updated>
+    </task>
+    <task id="LOCAL−00002" summary="Points v1">
+      <created>1678544837986</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1678544837986</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Points v1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Points v1" />
   </component>
 </project>
