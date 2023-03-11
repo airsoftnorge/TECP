@@ -1,28 +1,33 @@
-# TECP -Pre-Pre-Pre-alpha
+# TECP 
 **T**AK **E**nabled **C**apture **P**oint for airsoft games
 
 # Idea
 Have physical points of interest that can be captured and have them reflect which teams hold which points on their TAK EUD.
+Make the programming as easy to modify as possible, to enable new ideas to quickly be implemented. 
 
 # Moving parts
 
 ### TAK Gateway
 Responsible for bringing points and statuses of points from the meshtastic network to the TAK servers in a COT format.
+Differentiate between rally points, spawns and capture points. 
 
 Hardware: Raspberry pi, Meshtastic device, LTE USB dongle.
 
 ### Meshtastic enabled capture point
 Responsible for sending team capture (red/blue) information to the tak gateway via the meshtastic network
+Hardware buttons when pressed over X time changes the color of the point, which is then sent over meshtastic to the gateway.
 
 Hardware: Raspberry pi, meshtastic device, momentary push buttons.
 
 ### Meshtastic enabled rally points
 Responsible for sending rally point information over the meshtastic network.
+THis point will only be shown on the appropriate server, blue on blue and red on red. 
 
 Raspberry pi, meshtastic device
 
 ### Meshtastic enabled uncapturable spawn points
 Responsible for sending spawn point information over the meshtastic network.
+Same as the capture points but predefined color and no capture mechanism.
 
 Raspberry pi, meshtastic device
 
