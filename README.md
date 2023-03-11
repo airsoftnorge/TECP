@@ -15,19 +15,19 @@ Differentiate between rally points, spawns and capture points.
 
 Hardware: Raspberry pi, Meshtastic device, LTE USB dongle.
 
-### Meshtastic enabled capture point
+### Capture point
 Responsible for sending team capture (red/blue) information to the tak gateway via the meshtastic network
 Hardware buttons when pressed over X time changes the color of the point, which is then sent over meshtastic to the gateway.
 
 Hardware: Raspberry pi, meshtastic device, momentary push buttons.
 
-### Meshtastic enabled rally points
+### Rally points
 Responsible for sending rally point information over the meshtastic network.
 THis point will only be shown on the appropriate server, blue on blue and red on red. 
 
 Raspberry pi, meshtastic device
 
-### Meshtastic enabled un-capturable spawn points
+### Spawn points
 Responsible for sending spawn point information over the meshtastic network.
 Same as the capture points but predefined color and no capture mechanism.
 
