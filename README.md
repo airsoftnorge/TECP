@@ -9,9 +9,12 @@ Implementation with [meshtastic](https://meshtastic.org/) to reduce cost of each
 
 # Moving parts
 
-## TAK Gateway
+## TAK Gateway 
+
 Responsible for bringing points and statuses of points from the meshtastic network to the TAK servers in a COT format.
 Differentiate between rally points, spawns and capture points. 
+
+TAKGateway displayed as neutral yellow: ![image](https://user-images.githubusercontent.com/25975089/224485693-f3db8eb4-2391-4e09-8fe6-65e82d45aef3.png)
 
 Hardware: Raspberry pi, Meshtastic device, LTE USB dongle.
 
