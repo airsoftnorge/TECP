@@ -39,4 +39,18 @@ Can be disabled by other team if found and must be re-enabled to work.
 
 
 ### How it should look when completed
-![image](https://user-images.githubusercontent.com/25975089/224479390-c94bbf40-a6f5-4022-a651-db9e5723f404.png)
+
+![image](https://user-images.githubusercontent.com/25975089/224483643-04725107-7b04-47f8-9069-197905f84d40.png)
+```
+Capture points in this map:
+Alpha, Bravo, Charlie held by your team
+Delta is neutral
+Echo and Foxtrot is held by the enemy team.
+
+Rally point:
+You can only see your own rally point south-south-west of Spawn.
+
+Spawns:
+Both spawns are visible to both teams.
+```
+
