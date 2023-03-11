@@ -2,7 +2,8 @@ import json
 import time
 
 import RPi.GPIO as GPIO
-from meshtastic import SerialInterface, MessageType
+import meshtastic
+import meshtastic.serial_interface
 
 # set GPIO mode to BCM
 GPIO.setmode(GPIO.BCM)
@@ -39,7 +40,7 @@ button_states = {
 }
 
 # connect to meshtastic
-interface = SerialInterface()
+interface = meshtastic.serial_interface()
 
 
 # send initial state
