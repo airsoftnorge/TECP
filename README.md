@@ -5,6 +5,8 @@
 Have physical points of interest that can be captured and have them reflect which teams hold which points on their TAK EUD.
 Make the programming as easy to modify as possible, to enable new ideas to quickly be implemented. 
 
+Implementation with [meshtastic](https://meshtastic.org/) to reduce cost of each unit.
+
 # Moving parts
 
 ### TAK Gateway
@@ -25,7 +27,7 @@ THis point will only be shown on the appropriate server, blue on blue and red on
 
 Raspberry pi, meshtastic device
 
-### Meshtastic enabled uncapturable spawn points
+### Meshtastic enabled un-capturable spawn points
 Responsible for sending spawn point information over the meshtastic network.
 Same as the capture points but predefined color and no capture mechanism.
 
