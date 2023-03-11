@@ -8,5 +8,5 @@
   "startcolor": "red",
   "startcolor_helptext": "Select between `red`, `neutral` or `blue`",
   "hasbuzzer": 0,
-  "hasbuzzer_helptext": "0/1 if you have a buzzer connected it will play 5 beeps when capture has completed"
+  "hasbuzzer_helptext": "0/1 if a buzzer is connected it will play 5 beeps when capture has completed"
 }
