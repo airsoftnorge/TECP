@@ -1,7 +1,8 @@
-import RPi.GPIO as GPIO
-import time
-from meshtastic import SerialInterface, MessageType
 import json
+import time
+
+import RPi.GPIO as GPIO
+from meshtastic import SerialInterface, MessageType
 
 # set GPIO mode to BCM
 GPIO.setmode(GPIO.BCM)
@@ -20,13 +21,12 @@ name = ""
 mode = ""
 capture_time = ""
 startcolor = ""
- 
 
 # load the configuration data from the JSON file
 with open("config.json", "r") as f:
     config_data = json.load(f)
 
-#Get keys from config
+# Get keys from config
 for key, value in config_data.items():
     globals()[key] = value
 
@@ -41,6 +41,7 @@ button_states = {
 # connect to meshtastic
 interface = SerialInterface()
 
+
 # send initial state
 def sendinitialstate():
     print(f"Sending initial state of the point")
@@ -50,6 +51,8 @@ def sendinitialstate():
     message["rxfs"] = [f"/mesh/points/{mode}/{name}/status/"]
     # send the message in meshtastic
     interface.sendData(message)
+
+
 sendinitialstate()
 
 # loop forever
