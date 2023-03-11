@@ -20,7 +20,7 @@ name = ""
 mode = ""
 capture_time = ""
 startcolor = ""
-
+ 
 
 # load the configuration data from the JSON file
 with open("config.json", "r") as f:
