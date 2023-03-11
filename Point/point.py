@@ -18,10 +18,10 @@ GPIO.setup(22, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(27, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 # set up dummy variables to be loaded from json
-name = ""
-mode = ""
-capture_time = ""
-startcolor = ""
+name = temp
+mode = temp
+capture_time = temp
+startcolor = temp
 
 # load the configuration data from the JSON file
 with open("config.json", "r") as f:
