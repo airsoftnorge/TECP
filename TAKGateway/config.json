@@ -4,6 +4,8 @@
   "report_location_helptext": "Select between `true` or `false`, this decides if it should show up on the map or not.",
   "startcolor": "neutral",
   "startcolor_helptext": "Select between `red`, `neutral` or `blue`",
-  "icon": "asd",
-  "icon_helptext": "Any valid TAK icon"
+  "cot_type": "a-u-G-E-S-E",
+  "cot_type_helptext": "Any valid TAK type.",
+  "cot_icon": "COT_MAPPING_2525C/a-u/a-u-G",
+  "cot_icon_helptext": "Any valid TAK icon"
 }
