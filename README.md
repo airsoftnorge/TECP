@@ -19,20 +19,28 @@ Hardware: Raspberry pi, Meshtastic device, LTE USB dongle.
 ## Points
 Each point contains a raspberry pi and a meshtastic device. Capture mode units will also contain a set of pushbuttons to interact with GPIO to let players capture them.
 
+Points will be displayed using mil-std-2525 icons. 
+
+Friendly points are displayed as cyan rectangles:  ![image](https://user-images.githubusercontent.com/25975089/224482967-b65e6aac-3ea6-467e-b414-f8c413cf2214.png)
+
+Enemy points are displayed as red diamons:  ![image](https://user-images.githubusercontent.com/25975089/224482983-6dd2923c-d575-45b1-a8a7-a7d7c0ee4f93.png)
+
+Neutral points are displayed as green squares:  ![image](https://user-images.githubusercontent.com/25975089/224482953-7fca8f3f-d7ec-4c12-94e5-75ae2af6f6b8.png)
 
 ### Mode: Capture
 Capturable points by holding down a button for a configurable amount of time. Upon capture the status will be broadcast on meshtastic to the gateway, updating the TAK servers.
-Will be represended in TAK with mil-std-2525 icons matching the friendly/enemy/neutral status in relation to your team color. 
+
 
 
 ### Mode: Spawn
 Non capturable points.
-Will be represended in TAK with mil-std-2525 icons matching the friendly/enemy/neutral status in relation to your team color. 
+
+
 
 ### Mode: Rally
 Rally points are only seen to the color they are configured for, acts as a moveable spawn point.
 Can be disabled by other team and must be re-enabled to work.
-Will be represended in TAK with mil-std-2525 icons
+
 
 ### How it should look when completed
 ![image](https://user-images.githubusercontent.com/25975089/224479390-c94bbf40-a6f5-4022-a651-db9e5723f404.png)
