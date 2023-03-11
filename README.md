@@ -42,18 +42,19 @@ Can be disabled by other team if found and must be re-enabled to work.
 
 
 ### How it should look when completed
+Friendly is always cyan, enemy is always red, neutral is always green and unknown is always yellow.
 
-![image](https://user-images.githubusercontent.com/25975089/224483643-04725107-7b04-47f8-9069-197905f84d40.png)
-```
-Capture points in this map:
-Alpha, Bravo, Charlie held by your team
-Delta is neutral
-Echo and Foxtrot is held by the enemy team.
+![image](https://user-images.githubusercontent.com/25975089/224486036-72ddbfb5-de22-4327-8ebd-d0c27491a59f.png)
 
-Rally point:
-You can only see your own rally point south-south-west of Spawn.
-
-Spawns:
-Both spawns are visible to both teams.
-```
+* Capture points in this map:
+  * Alpha, Bravo, Charlie held by your team
+  * Delta is neutral.
+  * Echo and Foxtrot is held by the enemy team.
+* Rally point:
+  * Friendly rally point visible.
+  * Enemy rally point not visible.
+* Spawns:
+  * Both spawns are visible to both teams.
+* TAK Gateway:
+  * Displyed as yellow.
 
