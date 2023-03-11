@@ -17,24 +17,22 @@ Differentiate between rally points, spawns and capture points.
 Hardware: Raspberry pi, Meshtastic device, LTE USB dongle.
 
 ## Points
+Each point contains a raspberry pi and a meshtastic device. Capture mode units will also contain a set of pushbuttons to interact with GPIO to let players capture them.
 
-### Mode: Capture points
-Responsible for sending team capture (red/blue) information to the tak gateway via the meshtastic network
-Hardware buttons when pressed over X time changes the color of the point, which is then sent over meshtastic to the gateway.
 
-Hardware: Raspberry pi, meshtastic device, momentary push buttons.
+### Mode: Capture
+Capturable points by holding down a button for a configurable amount of time. Upon capture the status will be broadcast on meshtastic to the gateway, updating the TAK servers.
+Will be represended in TAK with mil-std-2525 icons matching the friendly/enemy/neutral status in relation to your team color. 
 
-### Mode: Spawn points
-Responsible for sending spawn point information over the meshtastic network.
-Same as the capture points but predefined color and no capture mechanism.
 
-Raspberry pi, meshtastic device
+### Mode: Spawn
+Non capturable points.
+Will be represended in TAK with mil-std-2525 icons matching the friendly/enemy/neutral status in relation to your team color. 
 
-### Mode: Rally points
-Responsible for sending rally point information over the meshtastic network.
-THis point will only be shown on the appropriate server, blue on blue and red on red. 
-
-Raspberry pi, meshtastic device
+### Mode: Rally
+Rally points are only seen to the color they are configured for, acts as a moveable spawn point.
+Can be disabled by other team and must be re-enabled to work.
+Will be represended in TAK with mil-std-2525 icons
 
 ### How it should look when completed
 ![image](https://user-images.githubusercontent.com/25975089/224479390-c94bbf40-a6f5-4022-a651-db9e5723f404.png)
