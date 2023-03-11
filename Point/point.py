@@ -34,9 +34,9 @@ yellow_button = Button(27, bounce_time=0.2)
 # Setup all default values:
 name = ""
 mode = ""
-capture_time = ""
+capture_time = 30
 startcolor = ""
-hasbuzzer = False
+hasbuzzer = 0
 start_time = 0
 
 # load the configuration data from the JSON file
@@ -55,20 +55,22 @@ def sendmessage(poop):
 
 
 def buzzercapcomplete():
-    for i in range(3):
+    print(f"Playing capture sound")
+    for i in range(5):
         bz.on()
-        sleep(0.25)
+        print(f"BEEP")
+        time.sleep(0.25)
         bz.off()
-        sleep(0.5)
+        time.sleep(0.25)
 # send initial state
 def send_initial_state():
     print(f"Sending initial state of the point")
     # create a message to send in meshtastic
     sendmessage(f"/mesh/points/{name}/{mode}/status/{startcolor}")
     print(f"Initial message sent")
-send_initial_state()
 
-def buttondoer(color):
+#Sending initial state from config.json
+send_initial_state()
 
 
 # loop forever
@@ -77,18 +79,17 @@ print(f"Starting looping forever")
 while True:
     # check if red_button is held
     if red_button.is_pressed:
-        if hasbuzzer:
-            buzzercapstart()
         # check if this is the first time the button is pressed
         if start_time == 0:
             start_time = time.time()
         # check if the button has been held for 30 seconds
-        if time.time() - start_time >= 30:
+        if time.time() - start_time >= capture_time:
+            print(f"Point {name} has been captured by red!")
             sendmessage(f"/mesh/points/{name}/{mode}/status/red")
             #play capture buzz if enabled
-            if hasbuzzer:
+            if hasbuzzer == 1:
                 buzzercapcomplete()
-                time.sleep(5)
+            time.sleep(5)
             # reset the start time
             start_time = 0
     # check if blue_button is held
@@ -97,28 +98,27 @@ while True:
         if start_time == 0:
             start_time = time.time()
         # check if the button has been held for 30 seconds
-        if time.time() - start_time >= 30:
-            print("Sending blue to meshtastic!")
+        if time.time() - start_time >= capture_time:
+            print(f"Point {name} has been captured by blue!")
             sendmessage(f"/mesh/points/{name}/{mode}/status/blue")
             # play capture buzz if enabled
-            if hasbuzzer:
+            if hasbuzzer == 1:
                 buzzercapcomplete()
-                time.sleep(5)
+            time.sleep(5)
             # reset the start time
             start_time = 0
     elif yellow_button.is_pressed:
-        print("Yellow button detected")
         # check if this is the first time the button is pressed
         if start_time == 0:
             start_time = time.time()
         # check if the button has been held for 30 seconds
-        if time.time() - start_time >= 30:
-            print("Sending yellow to meshtastic!")
+        if time.time() - start_time >= capture_time:
+            print(f"Point {name} has been captured by yellow!")
             sendmessage(f"/mesh/points/{name}/{mode}/status/yellow")
             # play capture buzz if enabled
-            if hasbuzzer:
+            if hasbuzzer == 1:
                 buzzercapcomplete()
-                time.sleep(5)
+            time.sleep(5)
             # reset the start time
             start_time = 0
     # no button is pressed, reset start time
@@ -127,5 +127,4 @@ while True:
 
     # sleep for a short amount of time to avoid consuming too much CPU
     time.sleep(0.1)
-
 
