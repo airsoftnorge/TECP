@@ -2,7 +2,7 @@
   "name": "Alpha",
   "name_helptext": "This will be the visible displayed name on the map, be short and descriptive",
   "mode": "capture",
-  "mode_helptext": "Select between `rally`, `spawn` and `capture`",
+  "mode_helptext": "Select between `rally-blue`, `rally-red`, `spawn` and `capture`",
   "capture_time": 30,
   "capture_time_helptext": "How long it will take to change the color of a capture point or disable a rally point",
   "startcolor": "red",
