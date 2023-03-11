@@ -7,6 +7,10 @@
 ```         
 # TECP Point script
 When running in cojunction with a meshtastic device will publish default information based on `config.json` and will change color based on GPIO buttons. 
+
+Meshtastic device must have serial enabled. 
+```meshtastic --set serial.enabled true ```
+
 Default GPIO pins are for colors are:
 
 * Red

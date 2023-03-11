@@ -7,6 +7,9 @@
 ```         
 # TECP Gateway
 
+Meshtastic device must have serial enabled. 
+```meshtastic --set serial.enabled true ```
+
 * gateway.py
   * Route meshtastic events into node-red for proccessing and distribution
 * flows.json
