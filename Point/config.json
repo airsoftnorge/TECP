@@ -8,5 +8,5 @@
   "startcolor": "red",
   "startcolor_helptext": "Select between `red`, `neutral` or `blue`",
   "hasbuzzer": 0,
-  "hasbuzzer_helptext": "True/False if you have a buzzer connected it will play 3 beeps when capture has occurred and one when started. "
+  "hasbuzzer_helptext": "0/1 if you have a buzzer connected it will play 5 beeps when capture has completed"
 }
