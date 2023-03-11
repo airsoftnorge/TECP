@@ -21,15 +21,15 @@ Hardware buttons when pressed over X time changes the color of the point, which 
 
 Hardware: Raspberry pi, meshtastic device, momentary push buttons.
 
-### Rally points
-Responsible for sending rally point information over the meshtastic network.
-THis point will only be shown on the appropriate server, blue on blue and red on red. 
-
-Raspberry pi, meshtastic device
-
 ### Spawn points
 Responsible for sending spawn point information over the meshtastic network.
 Same as the capture points but predefined color and no capture mechanism.
+
+Raspberry pi, meshtastic device
+
+### Rally points
+Responsible for sending rally point information over the meshtastic network.
+THis point will only be shown on the appropriate server, blue on blue and red on red. 
 
 Raspberry pi, meshtastic device
 
