@@ -7,10 +7,23 @@ Have physical points of interest that can be captured and have them reflect whic
 # Parts
 
 ## TAK Gateway
-Raspberry pi, Meshtastic device, LTE USB dongle.
+Responsible for bringing points and statuses of points from the meshtastic network to the TAK servers in a COT format.
+
+
+Hardware: Raspberry pi, Meshtastic device, LTE USB dongle.
 
 ## Meshtastic enabled capture point
-Raspberry pi, meshtastic device, momentary push buttons.
+Responsible for sending team capture (red/blue) information to the tak gateway via the meshtastic network
+
+Hardware: Raspberry pi, meshtastic device, momentary push buttons.
 
 ## Meshtastic enabled rally points
+Responsible for sending rally point information over the meshtastic network.
+
 Raspberry pi, meshtastic device
+
+## Meshtastic enabled uncapturable spawn points
+Responsible for sending spawn point information over the meshtastic network.
+
+Raspberry pi, meshtastic device
+
