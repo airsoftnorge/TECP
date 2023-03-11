@@ -1,3 +1,6 @@
+# Pre-pre-pre-pre-pre-alpha
+Do not use or try to make sense of.. public for sanity checking reasons. 
+
 # TECP 
 **T**AK **E**nabled **C**apture **P**oints for airsoft games
 
