@@ -1,0 +1,8 @@
+{
+  "name": "Alpha",
+  "name_helptext": "This will be the visible displayed name on the map, be short and descriptive",
+  "mode": "capture",
+  "mode_helptext": "Select between `rally`, `spawn` and `capture`",
+  "startcolor": "red",
+  "startcolor_helptext": "Select between `red`, `neutral` or `blue`"
+}

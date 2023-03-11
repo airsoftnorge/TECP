@@ -6,28 +6,31 @@ Have physical points of interest that can be captured and have them reflect whic
 Make the programming as easy to modify as possible, to enable new ideas to quickly be implemented. 
 
 Implementation with [meshtastic](https://meshtastic.org/) to reduce cost of each unit.
+Modelled after Squad 
 
 # Moving parts
 
-### TAK Gateway
+## TAK Gateway
 Responsible for bringing points and statuses of points from the meshtastic network to the TAK servers in a COT format.
 Differentiate between rally points, spawns and capture points. 
 
 Hardware: Raspberry pi, Meshtastic device, LTE USB dongle.
 
-### Capture point
+## Points
+
+### Mode: Capture points
 Responsible for sending team capture (red/blue) information to the tak gateway via the meshtastic network
 Hardware buttons when pressed over X time changes the color of the point, which is then sent over meshtastic to the gateway.
 
 Hardware: Raspberry pi, meshtastic device, momentary push buttons.
 
-### Spawn points
+### Mode: Spawn points
 Responsible for sending spawn point information over the meshtastic network.
 Same as the capture points but predefined color and no capture mechanism.
 
 Raspberry pi, meshtastic device
 
-### Rally points
+### Mode: Rally points
 Responsible for sending rally point information over the meshtastic network.
 THis point will only be shown on the appropriate server, blue on blue and red on red. 
 

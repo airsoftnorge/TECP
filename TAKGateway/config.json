@@ -1,0 +1,5 @@
+{
+  "name": "TakGateway",
+  "report_location": false,
+  "report_location_helptext": "Select between `true` or `false`, this decides if it should show up on the map or not."
+}
