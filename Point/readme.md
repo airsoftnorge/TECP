@@ -15,5 +15,14 @@ Default GPIO pins are for colors are:
   * GPIO 22
 * Yellow
   * GPIO 27
-
+* Buzzer
+  * GPIO 23
+  * 
 On power off or restart of script it will revert to config.json 
+
+
+Parts:
+* Buzzer
+  * https://www.aliexpress.com/item/4000100829835.html
+* Buttons
+  * https://www.aliexpress.com/item/1005004710768369.html

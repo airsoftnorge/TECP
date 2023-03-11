@@ -6,5 +6,7 @@
   "capture_time": 30,
   "capture_time_helptext": "How long it will take to change the color of a capture point or disable a rally point",
   "startcolor": "red",
-  "startcolor_helptext": "Select between `red`, `neutral` or `blue`"
+  "startcolor_helptext": "Select between `red`, `neutral` or `blue`",
+  "hasbuzzer": False,
+  "hasbuzzer_helptext": "True/False if you have a buzzer connected it will play 3 beeps when capture has occurred and one when started. "
 }
