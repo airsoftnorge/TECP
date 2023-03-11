@@ -16,6 +16,10 @@ Make the programming as easy to modify as possible, to enable new ideas to quick
 
 Implementation with [meshtastic](https://meshtastic.org/) to reduce cost of each unit.
 
+Everything here is preconfigured or made for [ASN-TAK](https://airsoftnorge.com/tak), if you intend to use it elsewhere you might need to make adjustments.
+
+We can be found ond discord for any questions.
+
 # Moving parts
 
 ## TAK Gateway 
