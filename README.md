@@ -60,7 +60,7 @@ Can be disabled by other team if found and must be re-enabled to work.
 * Have points revert to neutral after a set time
 
 
-### How it should look when completed
+# How we expect it to look once done
 Friendly is always cyan, enemy is always red, neutral is always green and unknown is always yellow.
 
 ![image](https://user-images.githubusercontent.com/25975089/224486605-3f302c59-90d2-4e8f-8ee8-0d4645be5006.png)
