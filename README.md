@@ -46,7 +46,7 @@ Friendly is always cyan, enemy is always red, neutral is always green and unknow
 
 ![image](https://user-images.githubusercontent.com/25975089/224486605-3f302c59-90d2-4e8f-8ee8-0d4645be5006.png)
 * Friendly players in this map:
- * All cyan dots are friendly players. 
+  * All cyan dots are friendly players. 
 * Capture points in this map:
   * Alpha, Bravo, Charlie held by your team
   * Delta is neutral.
