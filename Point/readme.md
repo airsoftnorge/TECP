@@ -1,4 +1,3 @@
-# TECP Point script
 ```
      ______   ______   ______   ____ 
     /_  __/  / ____/  / ____/  / __ \
@@ -6,6 +5,7 @@
     / /    / /___   / /___   / ____/ 
    /_/    /_____/   \____/  /_/      
 ```         
+# TECP Point script
 When running in cojunction with a meshtastic device will publish default information based on `config.json` and will change color based on GPIO buttons. 
 Default GPIO pins are for colors are:
 
