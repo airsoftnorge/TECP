@@ -70,7 +70,7 @@ def send_initial_state():
 #Sending initial state from config.json
 print(f"Point: {name}")
 print(f"Mode: {mode}")
-print(f"Starts as: {mode}")
+print(f"Starts as: {startcolor}")
 print(f"Capture time: {capture_time}")
 print(f"Buzzer: {hasbuzzer}")
 send_initial_state()
@@ -91,8 +91,8 @@ def button_pressed(color):
         # reset the start time
         start_time = 0
     else:
-        timeheld = time.time() - start_time
-        print(f"Capture started for {color}. Held for {int(timeheld)}seconds.")
+        timeheld = int(time.time() - start_time)
+        print(f"Capture started for {color}. Held for {timeheld}seconds.")
         time.sleep(2)
     return start_time
 
