@@ -1,12 +1,18 @@
 {
   "name": "Alpha",
   "name_helptext": "This will be the visible displayed name on the map, be short and descriptive",
-  "mode": "capture",
-  "mode_helptext": "Select between `rally-blue`, `rally-red`, `spawn` and `capture`",
+  "mode": "spawn",
+  "mode_helptext": "Select between `rally`, `spawn` and `capture`",
   "capture_time": 30,
   "capture_time_helptext": "How long it will take to change the color of a capture point or disable a rally point",
-  "startcolor": "red",
-  "startcolor_helptext": "Select between `red`, `neutral` or `blue`",
-  "hasbuzzer": 0,
-  "hasbuzzer_helptext": "0/1 if a buzzer is connected it will play 5 beeps when capture has completed"
+  "start_color": "red",
+  "start_color_helptext": "Select between `red`, `neutral` or `blue`",
+  "has_buzzer": 1,
+  "has_buzzer_helptext": "0/1 if a buzzer is connected it will play 5 beeps when capture has completed",
+  "spawn_buzzer": 1,
+  "spawn_buzzer_helptext": "0/1 plays a buzz every x minute to signify respawn cycles",
+  "spawn_main_cycle": 2,
+  "spawn_main_cycle_helptext": "Specify the amount of minutes between each spawn cycle, leading to a buzz being played by the spawn points when respawn is due. ",
+  "spawn_rally_cycle": 2,
+  "spawn_rally_cycle_helptext": "Specify the amount of minutes between each spawn cycle, leading to a buzz being played by the spawn points when respawn is due. "
 }
