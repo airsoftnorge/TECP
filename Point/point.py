@@ -95,7 +95,7 @@ def send_initial_state():
 send_initial_state()
 
 def button_pressed(color):
-    global start_time
+    start_time
     # check if this is the first time the button is pressed
     if start_time == 0:
         start_time = time.time()
@@ -136,7 +136,7 @@ while True:
         if mode == "rally" and time.time() - spawn_cycle_timer_start >= spawn_rally_cycle * 60:
             buzzer_spawn_cycle()
     # no button is pressed and it's not time to spawn.
-    elif:
+    else:
         start_time = 0
     # sleep for a short amount of time to avoid consuming too much CPU
     time.sleep(0.5)
