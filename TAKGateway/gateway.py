@@ -10,7 +10,6 @@
 # import meshtastic
 
 import sys
-
 import meshtastic.node
 import meshtastic.node
 import meshtastic.serial_interface
@@ -31,7 +30,7 @@ def getnodeinfo(self, file=sys.stdout):  # pylint: disable=W0613
         for n in self.nodes.values():
             # when the TBeam is first booted, it sometimes shows the raw data
             # so, we will just remove any raw keys
-            keys_to_remove = ('raw', 'decoded', 'payload')
+            keys_to_remove = ('raw','payload')
             n2 = remove_keys_from_dict(keys_to_remove, n)
 
             # if we have 'macaddr', re-format it
@@ -43,7 +42,10 @@ def getnodeinfo(self, file=sys.stdout):  # pylint: disable=W0613
 
             nodes = nodes + f"{stripnl(n2)}"
     # infos = myinfo +  nodes
-
+    print("MyInfo:")
+    print(myinfo)
+    print("Nodes")
+    print(nodes)
     return myinfo, nodes
 
 
@@ -53,5 +55,7 @@ def fetchserial():
     return fartmachine
 
 
-print("Getinfo1")
-print(getnodeinfo(fetchserial()))
+#Will literally shit itself if it receive non answers to location
+getnodeinfo(fetchserial())
+
+
