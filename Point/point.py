@@ -104,11 +104,13 @@ def capture_done(color):
 
 def capture_time_check(button,color):
     if button.is_held == True:
-        if button.held_time < int(2):
-            print(f"Capture attempt started by {color}")
+        if button.held_time < float(1):
+            print(f"Capture attempt started by {color}.Capture time is {capture_time} seconds")
+        if button.held_time > 1.5 * capture_time:
+            print(f"Release the button, you've held it for {button.held_time} already and triggered a win!")
         if button.held_time > capture_time:
+            print(f"Capture completed by {color}, held for {button.held_time}.")
             capture_done(color)
-            button.held_time = 0
 
 # loop forever
 print(f"Starting looping forever")
