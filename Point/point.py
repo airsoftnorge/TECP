@@ -123,8 +123,8 @@ while True:
     # check if yellow_button is held
     if yellow_button.is_pressed:
         start_time = button_pressed("yellow")
-    #Check spawn cycle buzzer is enabled
-    if spawn_buzzer == 1:
+    #Check buzzer and spawn cycle buzzer is enabled
+    if spawn_buzzer == 1 and has_buzzer == 1:
         # Check if it's time to respawn.
         if mode == "spawn" and time.time() - spawn_cycle_timer_start >= spawn_main_cycle * 60:
             buzzer_spawn_cycle()
