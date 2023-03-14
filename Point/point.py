@@ -40,10 +40,11 @@ has_buzzer = 0
 spawn_buzzer = 0
 spawn_main_cycle = 30
 spawn_rally_cycle = 15
-start_time = 0
 spawn_cycle_timer = 0
 spawn_cycle_timer_start = time.time()
 
+spawn_last_spam = time.time()
+spawn_refresh_cycle = 2
 
 # load the configuration data from the JSON file
 with open("config.json", "r") as f:
@@ -117,19 +118,26 @@ def capture_time_check(button,color):
         if button.held_time > capture_time:
             print(f"Capture completed by {color}, held for {button.held_time}.")
             capture_complete(color)
+def spawn_refresh():
+    print(f"Refreshing {start_color} spawn {name}")
+    send_message(f"/mesh/points/{name}/{mode}/status/{color}")
+    spawn_last_spam = time.time()
+    return spawn_last_spam
+
 
 # loop forever
 print(f"Starting looping forever")
 
 while True:
+    #Spam spawn status at frequent intervals
+    if time.time() > spawn_last_spam + spawn_refresh_cycle * 60:
+        spawn_refresh()
 
-    # check if blue_button is held
+    #Check for button presses:
     if blue_button.is_active:
         capture_time_check(blue_button, "blue")
-    # check if red_button is held
     if red_button.is_active:
         capture_time_check(red_button, "red")
-     # check if yellow_button is held
     if yellow_button.is_active:
         capture_time_check(yellow_button, "yellow")
 
@@ -140,8 +148,7 @@ while True:
             buzzer_spawn_cycle()
         if mode == "rally" and time.time() - spawn_cycle_timer_start >= spawn_rally_cycle * 60:
             buzzer_spawn_cycle()
-    # no button is pressed and it's not time to spawn.
-    else:
-        start_time = 0
+
+
     # sleep for a short amount of time to avoid consuming too much CPU
     time.sleep(0.1)

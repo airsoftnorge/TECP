@@ -12,7 +12,9 @@
   "spawn_buzzer": 1,
   "spawn_buzzer_helptext": "0/1 enables or disables buzzer used for spawn announcements.",
   "spawn_main_cycle": 2,
-  "spawn_main_cycle_helptext": "Specify the amount of minutes between each main spawn cycle, leading to a buzz being played by the spawn points when respawn is due. ",
+  "spawn_main_cycle_helptext": "Specify the amount of minutes between each main spawn cycle, leading to a buzz being played by the spawn points when respawn is due.",
   "spawn_rally_cycle": 2,
-  "spawn_rally_cycle_helptext": "Specify the amount of minutes between each rally spawn cycle, leading to a buzz being played by the spawn points when respawn is due. "
+  "spawn_rally_cycle_helptext": "Specify the amount of minutes between each rally spawn cycle, leading to a buzz being played by the spawn points when respawn is due.",
+  "spawn_refresh_cycle": 2,
+  "spawn_refresh_cycle_helptext": "How many minutes between each time the spawn point refreshes it location to the MQTT"
 }
