@@ -28,6 +28,9 @@ red_button = Button(17, bounce_time=0.2)
 blue_button = Button(22, bounce_time=0.2)
 yellow_button = Button(27, bounce_time=0.2)
 
+
+
+
 # Setup all default values:
 name = ""
 mode = ""
@@ -40,6 +43,7 @@ spawn_rally_cycle = 15
 start_time = 0
 spawn_cycle_timer = 0
 spawn_cycle_timer_start = time.time()
+
 
 # load the configuration data from the JSON file
 with open("config.json", "r") as f:
@@ -89,40 +93,36 @@ def send_initial_state():
 #Sending initial state from config.json
 send_initial_state()
 
-def button_pressed(color):
-    start_time
-    # check if this is the first time the button is pressed
-    if start_time == 0:
-        start_time = time.time()
-    # check if the button has been held for 30 seconds
-    if time.time() - start_time >= capture_time:
-        print(f"Point {name} has been captured by {color}!")
-        send_message(f"/mesh/points/{name}/{mode}/status/{color}")
-        # play capture buzz if enabled
-        if has_buzzer == 1:
-            buzzer_cap_complete()
-        time.sleep(5)
-        # reset the start time
-        start_time = 0
+def capture_done(color):
+    print(f"Point {name} has been captured by {color}!")
+    send_message(f"/mesh/points/{name}/{mode}/status/{color}")
+    # play capture buzz if enabled
+    if has_buzzer == 1:
+        buzzer_cap_complete()
+    time.sleep(5)
+    print(f"Returning to looplife")
+
+def capture_time_check(button,color):
+    if button.held_time > capture_time:
+        capture_done(color)
     else:
-        time_held = int(time.time() - start_time)
-        print(f"Capture started for {color}. Held for {time_held}seconds.")
+        print(f"Capture started for {color}, held for {button.held_time}")
         time.sleep(2)
-    return start_time
 
 # loop forever
 print(f"Starting looping forever")
 
 while True:
     # check if red_button is held
-    if red_button.is_pressed:
-        start_time = button_pressed("red")
+    if red_button.is_held:
+        capture_time_check(red_button,"red")
     # check if blue_button is held
-    if blue_button.is_pressed:
-        start_time = button_pressed("blue")
+    if blue_button.is_held:
+        capture_time_check(blue_button, "blue")
     # check if yellow_button is held
-    if yellow_button.is_pressed:
-        start_time = button_pressed("yellow")
+    if yellow_button.is_held:
+        capture_time_check(yellow_button, "yellow")
+
     #Check buzzer and spawn cycle buzzer is enabled
     if spawn_buzzer == 1 and has_buzzer == 1:
         # Check if it's time to respawn.
