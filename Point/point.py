@@ -119,7 +119,7 @@ def capture_time_check(button, color):
 
 def spawn_refresh():
     print(f"Refreshing {start_color} spawn {name}")
-    send_message(f"/mesh/points/{name}/{mode}/status/{color}")
+    send_message(f"/mesh/points/{name}/{mode}/status/{start_color}")
     spawn_last_spam = time.time()
     return spawn_last_spam
 
