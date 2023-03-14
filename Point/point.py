@@ -24,9 +24,9 @@ import meshtastic.serial_interface
 # 23 being buzzer
 
 bz = Buzzer(23)
-red_button = Button(17, bounce_time=0.2)
-blue_button = Button(22, bounce_time=0.2)
-yellow_button = Button(27, bounce_time=0.2)
+red_button = Button(17, bounce_time=0.05)
+blue_button = Button(22, bounce_time=0.05)
+yellow_button = Button(27, bounce_time=0.05)
 
 
 
@@ -55,9 +55,9 @@ with open("config.json", "r") as f:
 for key, value in config_data.items():
     globals()[key] = value
 
-def send_message(poop):
+def send_message(text):
     iface = meshtastic.serial_interface.SerialInterface()
-    iface.sendText(poop)
+    iface.sendText(text)
     iface.close()
 
 
@@ -99,28 +99,30 @@ def capture_done(color):
     # play capture buzz if enabled
     if has_buzzer == 1:
         buzzer_cap_complete()
-    time.sleep(5)
     print(f"Returning to looplife")
+    time.sleep(5)
 
 def capture_time_check(button,color):
-    if button.held_time > capture_time:
-        capture_done(color)
-    else:
-        print(f"Capture started for {color}, held for {button.held_time}")
-        time.sleep(2)
+    if button.is_held == True:
+        if button.held_time < int(2):
+            print(f"Capture attempt started by {color}")
+        if button.held_time > capture_time:
+            capture_done(color)
+            button.held_time = 0
 
 # loop forever
 print(f"Starting looping forever")
 
 while True:
-    # check if red_button is held
-    if red_button.is_held:
-        capture_time_check(red_button,"red")
+
     # check if blue_button is held
-    if blue_button.is_held:
+    if blue_button.is_active:
         capture_time_check(blue_button, "blue")
-    # check if yellow_button is held
-    if yellow_button.is_held:
+    # check if red_button is held
+    if red_button.is_active:
+        capture_time_check(red_button, "red")
+     # check if yellow_button is held
+    if yellow_button.is_active:
         capture_time_check(yellow_button, "yellow")
 
     #Check buzzer and spawn cycle buzzer is enabled
@@ -134,4 +136,4 @@ while True:
     else:
         start_time = 0
     # sleep for a short amount of time to avoid consuming too much CPU
-    time.sleep(0.5)
+    time.sleep(0.1)
