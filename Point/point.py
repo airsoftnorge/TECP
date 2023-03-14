@@ -63,12 +63,13 @@ def send_message(text):
 
 def buzzer_cap_complete():
     print(f"Playing capture sound")
-    for i in range(5):
-        bz.on()
-        print(f"BEEP")
-        time.sleep(0.25)
-        bz.off()
-        time.sleep(0.25)
+    if has_buzzer == 1:
+        for i in range(5):
+            bz.on()
+            print(f"BEEP")
+            time.sleep(0.25)
+            bz.off()
+            time.sleep(0.25)
 
 def buzzer_spawn_cycle():
     global spawn_cycle_timer_start
@@ -87,17 +88,22 @@ def buzzer_spawn_cycle():
 def send_initial_state():
     print(f"Sending initial state of the point")
     # create a message to send in meshtastic
-    send_message(f"/mesh/points/{name}/{mode}/status/{start_color}")
+    if mode == "rally":
+        send_message(f"/mesh/points/{name}/{mode}/status/{start_color}/{start_color}")
+    else:
+        send_message(f"/mesh/points/{name}/{mode}/status/{start_color}")
     print(f"Initial message sent")
 
 #Sending initial state from config.json
 send_initial_state()
 
-def capture_done(color):
+def capture_complete(color):
     print(f"Point {name} has been captured by {color}!")
-    send_message(f"/mesh/points/{name}/{mode}/status/{color}")
-    # play capture buzz if enabled
-    if has_buzzer == 1:
+    if mode == "rally":
+        send_message(f"/mesh/points/{name}/{mode}/status/{start_color}/{color}")
+        buzzer_cap_complete()
+    else:
+        send_message(f"/mesh/points/{name}/{mode}/status/{color}")
         buzzer_cap_complete()
     print(f"Returning to looplife")
     time.sleep(5)
@@ -110,7 +116,7 @@ def capture_time_check(button,color):
             print(f"Release the button, you've held it for {button.held_time} already and triggered a win!")
         if button.held_time > capture_time:
             print(f"Capture completed by {color}, held for {button.held_time}.")
-            capture_done(color)
+            capture_complete(color)
 
 # loop forever
 print(f"Starting looping forever")
