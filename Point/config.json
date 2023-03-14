@@ -16,5 +16,5 @@
   "spawn_rally_cycle": 2,
   "spawn_rally_cycle_description": "Specify the amount of minutes between each rally spawn cycle, leading to a buzz being played by the spawn points when respawn is due.",
   "spawn_refresh_cycle": 2,
-  "spawn_refresh_cycle_description": "How many minutes between each time the spawn point refreshes it location to the MQTT"
+  "spawn_refresh_cycle_description": "How many minutes between each time the spawn point refreshes it location to the MQTT."
 }
