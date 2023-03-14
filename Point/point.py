@@ -51,11 +51,6 @@ with open("config.json", "r") as f:
 for key, value in config_data.items():
     globals()[key] = value
 
-
-# connect to meshtastic
-import meshtastic
-import meshtastic.serial_interface
-
 def send_message(poop):
     iface = meshtastic.serial_interface.SerialInterface()
     iface.sendText(poop)

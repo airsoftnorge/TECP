@@ -17,7 +17,7 @@ from google.protobuf.json_format import MessageToJson
 from meshtastic.util import stripnl, remove_keys_from_dict, convert_mac_addr
 
 
-# TODO: Receive messages from meshtastic - Send to SQLite for processing by node-red
+
 
 
 def getnodeinfo(self, file=sys.stdout):  # pylint: disable=W0613
