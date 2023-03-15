@@ -10,7 +10,8 @@
 Meshtastic device must have serial enabled. 
 ```meshtastic --set serial.enabled true ```
 
-* gateway.py
-  * Route meshtastic events into node-red for proccessing and distribution
-* flows.json
-  * Contains the flows required for node-red to understand meshtastic events received by the gateway
+Capturepoints -> Gateway -> External MQTT -> Each server pulls from MQTT and create its own COTS -> Push to local taky server.
+
+Capturepoints -> Gateway -> Internal MQTT -> Internal node-red create COTs ->  Push to red/blue 
+
+
