@@ -2,7 +2,7 @@
   "name": "TakGateway",
   "report_location": true,
   "report_location_helptext": "Select between `true` or `false`, this decides if it should show up on the map or not.",
-  "cot_type": "a-n-G-E-S-E,",
+  "cot_type": "a-n-G-E-S",
   "cot_type_helptext": "Any valid TAK type.",
   "cot_icon": "COT_MAPPING_2525C/a-u/a-u-G",
   "cot_icon_helptext": "Any valid TAK icon."
