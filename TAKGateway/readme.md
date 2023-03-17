@@ -20,7 +20,7 @@ Feeds points from the MQTT into the TAK servers.
 
 Sorting for color, determining if the point is friendly, enemy or unknown based on server color. 
 
-![image](https://user-images.githubusercontent.com/25975089/226059930-925f9464-2131-4f96-9a02-d48e91b35dd0.png)
+![image](https://user-images.githubusercontent.com/25975089/226060472-1ecdc5b5-f941-4188-abb2-31b723fafa18.png)
 
 Getting location variables for input not yet decided upon. 
 Might store info in a sqlite db if needed, unknown at this time. 
