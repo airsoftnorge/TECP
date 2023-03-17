@@ -24,9 +24,17 @@ Default GPIO pins are for colors are:
 
 On power off or restart of script it will revert to config.json 
 
-
 Parts:
 * Buzzer
   * https://www.aliexpress.com/item/4000100829835.html
 * Buttons
   * https://www.aliexpress.com/item/1005004710768369.html
+  
+# Components
+
+![image](https://user-images.githubusercontent.com/25975089/226065087-a6517b9e-0c47-4071-94a2-ff081d562e71.png)
+
+[Meshtastic](https://meshtastic.org/) devices used to create the mesh network.
+
+LTE USB Stick used for the gateway LTE connection
+
