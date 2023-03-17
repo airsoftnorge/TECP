@@ -10,9 +10,16 @@
 Meshtastic device must have serial enabled. 
 ```meshtastic --set serial.enabled true ```
 
-Capturepoints -> Gateway -> External MQTT -> Each server pulls from MQTT and create its own COTS -> Push to local taky server.
+# Setup options:
+### Hosted
+Capturepoints -> Gateway -> External MQTT -> Node-Red combines information needed -> Send COTs to the game TAK servers.
+* Pro: Server is remotely accessible for game-admin purposes.
+* Con: 4 dollars a month.
+### Local
+Capturepoints -> Gateway -> Internal MQTT -> Node-Red combines information needed -> Send COTs to the game TAK servers.
+* Pro: Don't need another server.
+* Con: cannot adjust anything without physical access.
 
-Capturepoints -> Gateway -> Internal MQTT -> Internal node-red create COTs ->  Push to red/blue 
 
 # MQTT Server
 ![image](https://user-images.githubusercontent.com/25975089/226064820-406703e5-b2b7-421d-a944-83243b83fae8.png)
