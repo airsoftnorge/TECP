@@ -14,9 +14,17 @@ Capturepoints -> Gateway -> External MQTT -> Each server pulls from MQTT and cre
 
 Capturepoints -> Gateway -> Internal MQTT -> Internal node-red create COTs ->  Push to red/blue 
 
+# MQTT Server
+![image](https://user-images.githubusercontent.com/25975089/226064820-406703e5-b2b7-421d-a944-83243b83fae8.png)
+
+[Mosquitto](https://mosquitto.org/) MQTT server, setup by yourself or contact us for access if you want to utilize the public servers. 
+
 
 # Node-Red
-Feeds points from the MQTT into the TAK servers. 
+![image](https://user-images.githubusercontent.com/25975089/226064955-492a8955-0030-46c5-b2e9-caabe88e5c71.png)
+
+
+[Node-Red](https://nodered.org/) feeds points from the MQTT into the TAK servers. 
 
 Sorting for color, determining if the point is friendly, enemy or unknown based on server color. 
 
