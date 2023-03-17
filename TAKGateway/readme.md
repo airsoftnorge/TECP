@@ -21,3 +21,4 @@ Feeds points from the MQTT into the TAK servers.
 ![image](https://user-images.githubusercontent.com/25975089/226052181-d0dd69ff-c173-402b-9ea7-6a92ebd8e1ba.png)
 
 Getting location variables for input not yet decided upon. 
+Might store info in a sqlite db if needed, unknown at this time. 
