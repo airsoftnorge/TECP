@@ -6,4 +6,8 @@
   "cot_type_helptext": "Any valid TAK type.",
   "cot_icon": "COT_MAPPING_2525C/a-u/a-u-G",
   "cot_icon_helptext": "Any valid TAK icon."
+  "mqtt_server": "mqtt.airsoftnorge.com",
+  "mqtt_server_helptext": "The server you want to process the events received from your gateway, could be locally hosted or elsewhere.",
+  "mqtt_user": "dummyvalue",
+  "mqtt_password": "dummyvalue"
 }
