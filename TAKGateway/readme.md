@@ -24,7 +24,9 @@ Capturepoints -> Gateway -> Internal MQTT -> Node-Red combines information neede
 # MQTT Server
 ![image](https://user-images.githubusercontent.com/25975089/226064820-406703e5-b2b7-421d-a944-83243b83fae8.png)
 
-[Mosquitto](https://mosquitto.org/) MQTT server, setup by yourself or contact us for access if you want to utilize the public servers. 
+[Mosquitto](https://mosquitto.org/) [MQTT](https://en.wikipedia.org/wiki/MQTT) server, maintains the updates from each point.
+
+You can setup by yourself or contact us for access if you want to utilize the public servers. 
 
 
 # Node-Red
