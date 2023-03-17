@@ -36,5 +36,7 @@ Parts:
 
 [Meshtastic](https://meshtastic.org/) devices used to create the mesh network.
 
-LTE USB Stick used for the gateway LTE connection
+Single board computer, like a raspberry pi zero, bananapi or whatever you have readily access to.
+
+
 
