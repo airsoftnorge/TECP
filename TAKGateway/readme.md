@@ -18,7 +18,9 @@ Capturepoints -> Gateway -> Internal MQTT -> Internal node-red create COTs ->  P
 # Node-Red
 Feeds points from the MQTT into the TAK servers. 
 
-![image](https://user-images.githubusercontent.com/25975089/226052181-d0dd69ff-c173-402b-9ea7-6a92ebd8e1ba.png)
+Sorting for color, determining if the point is friendly, enemy or unknown based on server color. 
+
+![image](https://user-images.githubusercontent.com/25975089/226059930-925f9464-2131-4f96-9a02-d48e91b35dd0.png)
 
 Getting location variables for input not yet decided upon. 
 Might store info in a sqlite db if needed, unknown at this time. 
