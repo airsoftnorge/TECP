@@ -14,6 +14,8 @@ Do not use or try to make sense of.. public for sanity checking reasons.
 Have physical points of interest that can be captured and have them reflect which teams hold which points on their TAK EUD.
 Make the programming as easy to modify as possible, to enable new ideas to quickly be implemented. 
 
+Anti-feature: At no point do you have to use your phone to interact with this. No QR-codes, no minigames within the game.
+
 Implementation with [meshtastic](https://meshtastic.org/) to reduce cost of each unit.
 
 Everything here is preconfigured or made for [ASN-TAK](https://airsoftnorge.com/tak), if you intend to use it elsewhere you might need to make adjustments.
