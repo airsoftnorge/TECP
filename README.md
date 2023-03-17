@@ -27,7 +27,8 @@ We can be found ond discord for any questions.
 Responsible for bringing points and statuses of points from the meshtastic network to the TAK servers in a COT format.
 Differentiate between rally points, spawns and capture points. 
 
-TAKGateway displayed as neutral yellow: ![image](https://user-images.githubusercontent.com/25975089/224485693-f3db8eb4-2391-4e09-8fe6-65e82d45aef3.png)
+TAKGateway displayed as neutral green: ![image](https://user-images.githubusercontent.com/25975089/226063791-ca2dff6c-61ee-4033-b3bf-3df42e37ee06.png)
+
 
 Hardware: Raspberry pi, Meshtastic device, LTE USB dongle.
 
@@ -40,7 +41,8 @@ Friendly points are displayed as cyan rectangles:  ![image](https://user-images.
 
 Enemy points are displayed as red diamonds:  ![image](https://user-images.githubusercontent.com/25975089/224482983-6dd2923c-d575-45b1-a8a7-a7d7c0ee4f93.png)
 
-Neutral points are displayed as green squares:  ![image](https://user-images.githubusercontent.com/25975089/224482953-7fca8f3f-d7ec-4c12-94e5-75ae2af6f6b8.png)
+Unknown points are displayed as yellow blobs:  ![image](https://user-images.githubusercontent.com/25975089/226063905-da9f559a-fe30-4a10-8647-a31aa644e81a.png)
+
 
 ### Mode: Capture
 Capturable points by holding down a button for a configurable amount of time. Upon capture the status will be broadcast on meshtastic to the gateway, updating the TAK servers.
