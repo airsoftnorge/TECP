@@ -1,7 +1,7 @@
 # Pre-pre-pre-alpha
 Do not use or try to make sense of.. public for sanity checking reasons. 
 
-# **T**AK **E**nabled **C**apture **P**oints for airsoft games
+# **T**AK **E**nabled **C**apture **P**oints
 ```
      ______   ______   ______   ____ 
     /_  __/  / ____/  / ____/  / __ \
