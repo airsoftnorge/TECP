@@ -8,9 +8,11 @@
 # TECP Gateway
 
 Meshtastic device must have serial enabled. 
+
 ```meshtastic --set serial.enabled true ```
 
 Must also have MQTT enabled to push points to our or your own mqtt server for processing and shipping to each server.
+
 ```meshtastic --set mqtt.enabled true --set mqtt.jsonEnabnled true --set mqtt.address mqtt.airsoftnorge.com:1883 --set mqtt.username "<your username>" --set mqtt.password "<your password>" ```
 
 # Setup options:
