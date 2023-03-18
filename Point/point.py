@@ -34,9 +34,9 @@ spawn_rally_cycle = 15
 spawn_cycle_timer = 0
 spawn_cycle_timer_start = time.time()
 
-self_reset = 0
-self_reset_timer = 15
-self_reset_when = float(time.time() + 99999)
+capture_self_reset = 0
+capture_self_reset_timer = 15
+capture_self_reset_when = float(time.time() + 99999)
 
 spawn_last_spam = time.time()
 spawn_refresh_cycle = 2
@@ -51,13 +51,13 @@ with open("config.json", "r") as f:
 for key, value in config_data.items():
     globals()[key] = value
 
-def self_reset_triggered():
+def capture_self_reset_triggered():
     send_initial_state()
-    set_self_reset_when()
+    capture_set_self_reset_when()
     buzzer_cap_complete()
 
-def set_self_reset_when():
-    if self_reset == 1:
+def capture_set_self_reset_when():
+    if capture_self_reset == 1:
         self_reset_when = time.time()
         return self_reset_when
 
@@ -108,8 +108,8 @@ send_initial_state()
 
 def capture_complete(color):
     print(f"Point {name} has been captured by {color}!")
-    if self_reset == 1:
-        set_self_reset_when()
+    if capture_self_reset == 1:
+        capture_set_self_reset_when()
     if mode == "rally":
         send_message(f"/mesh/points/{name}/{mode}/status/{start_color}/{color}")
         buzzer_cap_complete()
@@ -143,9 +143,9 @@ print(f"Starting looping forever")
 
 while True:
     # Resets after x time if self_reset is enabled.
-    if self_reset == 1:
-        if self_reset_when > time.time():
-            self_reset_triggered()
+    if capture_self_reset == 1 and mode == "capture":
+        if capture_self_reset_when > time.time():
+            capture_self_reset_triggered()
 
     # Spam spawn status at frequent intervals
     if time.time() > spawn_last_spam + spawn_refresh_cycle * 60:
