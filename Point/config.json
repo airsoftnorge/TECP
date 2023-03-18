@@ -6,7 +6,7 @@
   "capture_time": 30,
   "capture_time_description": "How many seconds it will take to change the color of a capture point or disable a rally point.",
   "start_color": "red",
-  "start_color_description": "Select between `red`, `yellow` or `blue`. Yellow in this context means unkwon/neutral.",
+  "start_color_description": "Select between `red`, `yellow` or `blue`. Yellow in this context means unkwon.",
   "has_buzzer": 1,
   "has_buzzer_description": "0/1 if a buzzer is connected it will play 5 beeps when capture has completed.",
   "spawn_buzzer": 1,
