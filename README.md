@@ -38,8 +38,6 @@ Differentiate between rally points, spawns and capture points.
 
 Full configuration found [here](https://github.com/airsoftnorge/TECP/blob/main/TAKGateway/config.json)
 
-Hardware: Raspberry pi, Meshtastic device, LTE USB dongle.
-
 ## Points
 Each point contains a raspberry pi and a meshtastic device. Capture mode units will also contain a set of push buttons to interact with GPIO to let players capture them.
 
