@@ -34,6 +34,9 @@ spawn_rally_cycle = 15
 spawn_cycle_timer = 0
 spawn_cycle_timer_start = time.time()
 
+self_reset: 0
+self_reset_timer: 15
+
 spawn_last_spam = time.time()
 spawn_refresh_cycle = 2
 
@@ -128,6 +131,7 @@ def spawn_refresh():
 print(f"Starting looping forever")
 
 while True:
+    # TODO: Implement self_reset check and logic.
     # Spam spawn status at frequent intervals
     if time.time() > spawn_last_spam + spawn_refresh_cycle * 60:
         spawn_refresh()
