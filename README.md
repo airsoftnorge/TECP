@@ -34,7 +34,7 @@ We can be found ond [discord](https://discord.gg/m3yaCJWtAk) for any questions.
 Responsible for bringing points and statuses of points from the meshtastic network to the TAK servers in a COT format.
 Differentiate between rally points, spawns and capture points. 
 
-TAKGateway displayed as neutral green: ![image](https://user-images.githubusercontent.com/25975089/226063791-ca2dff6c-61ee-4033-b3bf-3df42e37ee06.png)
+* TAKGateway displayed as neutral green: ![image](https://user-images.githubusercontent.com/25975089/226063791-ca2dff6c-61ee-4033-b3bf-3df42e37ee06.png)
 
 Full configuration found [here](https://github.com/airsoftnorge/TECP/blob/main/TAKGateway/config.json)
 
@@ -45,13 +45,10 @@ Each point contains a raspberry pi and a meshtastic device. Capture mode units w
 
 Full configuration found [here](https://github.com/airsoftnorge/TECP/blob/main/Point/config.json)
 
-Points will be displayed using mil-std-2525 icons. 
-
-Friendly points are displayed as cyan rectangles:  ![image](https://user-images.githubusercontent.com/25975089/224482967-b65e6aac-3ea6-467e-b414-f8c413cf2214.png)
-
-Enemy points are displayed as red diamonds:  ![image](https://user-images.githubusercontent.com/25975089/224482983-6dd2923c-d575-45b1-a8a7-a7d7c0ee4f93.png)
-
-Unknown points are displayed as yellow blobs:  ![image](https://user-images.githubusercontent.com/25975089/226063905-da9f559a-fe30-4a10-8647-a31aa644e81a.png)
+* Points will be displayed using mil-std-2525 icons. 
+* Friendly points are displayed as cyan rectangles:  ![image](https://user-images.githubusercontent.com/25975089/224482967-b65e6aac-3ea6-467e-b414-f8c413cf2214.png)
+* Enemy points are displayed as red diamonds:  ![image](https://user-images.githubusercontent.com/25975089/224482983-6dd2923c-d575-45b1-a8a7-a7d7c0ee4f93.png)
+* Unknown points are displayed as yellow blobs:  ![image](https://user-images.githubusercontent.com/25975089/226063905-da9f559a-fe30-4a10-8647-a31aa644e81a.png)
 
 
 ### Mode: Capture
