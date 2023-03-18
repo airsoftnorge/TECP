@@ -78,9 +78,9 @@ Modifiers:
 
 # Ideas for future expansion
 
+* Have points revert to initial state after a set amount of time ✔️
 * Activate spawn points based on currently owned points.
 * Force capture order
-* Have points revert to neutral after a set time ✔️
 
 
 # How we expect it to look once done
