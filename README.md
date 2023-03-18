@@ -36,11 +36,14 @@ Differentiate between rally points, spawns and capture points.
 
 TAKGateway displayed as neutral green: ![image](https://user-images.githubusercontent.com/25975089/226063791-ca2dff6c-61ee-4033-b3bf-3df42e37ee06.png)
 
+Full configuration found [here](https://github.com/airsoftnorge/TECP/blob/main/TAKGateway/config.json)
 
 Hardware: Raspberry pi, Meshtastic device, LTE USB dongle.
 
 ## Points
-Each point contains a raspberry pi and a meshtastic device. Capture mode units will also contain a set of pushbuttons to interact with GPIO to let players capture them.
+Each point contains a raspberry pi and a meshtastic device. Capture mode units will also contain a set of push buttons to interact with GPIO to let players capture them.
+
+Full configuration found [here](https://github.com/airsoftnorge/TECP/blob/main/Point/config.json)
 
 Points will be displayed using mil-std-2525 icons. 
 
@@ -53,6 +56,7 @@ Unknown points are displayed as yellow blobs:  ![image](https://user-images.gith
 
 ### Mode: Capture
 Capturable points by holding down a button for a configurable amount of time. Upon capture the status will be broadcast on meshtastic to the gateway, updating the TAK servers.
+
 
 ### Mode: Spawn
 Non-capturable points.
