@@ -67,7 +67,7 @@ Can be disabled by other team if found and must be re-enabled to work.
 # How we expect it to look once done
 Friendly is always cyan, enemy is always red, neutral is always green and unknown is always yellow.
 
-![image](https://user-images.githubusercontent.com/25975089/226099867-9003af90-8fb2-4907-b08b-bedf6debdadd.png)
+![image](https://user-images.githubusercontent.com/25975089/226099974-69509780-2948-43b9-82bd-3f1b5ab25ffa.png)
 * Friendly players in this map:
   * All cyan dots are friendly players. 
 * Capture points in this map:
