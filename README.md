@@ -52,20 +52,35 @@ Full configuration found [here](https://github.com/airsoftnorge/TECP/blob/main/P
 ### Mode: Capture
 Capturable points by holding down a button for a configurable amount of time. Upon capture the status will be broadcast on meshtastic to the gateway, updating the TAK servers.
 
+Modifiers:
+* Customizable capture time.
+* Optional buzzer for audible capture.
+* Permanent capture (default).
+* Self resetting to initial color after a set amount of time.
+
 
 ### Mode: Spawn
 Non-capturable points.
 
+Modifiers:
+* Optional buzzer for audible respawn alert.
+* Custom rally respawn time (Only makes sense with a buzzer).
 
 ### Mode: Rally
 Rally points are only seen to the color they are configured for, acts as a moveable spawn point for one side.
 Can be disabled by other team if found and must be re-enabled to work.
 
+Modifiers:
+* Customizable deactivation time.
+* Optional buzzer for audible respawn alert and deactivation alert.
+* Custom rally respawn time (Only makes sense with a buzzer).
+
+
 # Ideas for future expansion
 
 * Activate spawn points based on currently owned points.
 * Force capture order
-* Have points revert to neutral after a set time
+* Have points revert to neutral after a set time ✔️
 
 
 # How we expect it to look once done
