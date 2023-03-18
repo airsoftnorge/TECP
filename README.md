@@ -23,8 +23,9 @@ Implementation with [meshtastic](https://meshtastic.org/) to reduce cost of each
 Open source so you can take it and make something cooler if so desired. 
 
 Everything here is preconfigured or made for [ASN-TAK](https://airsoftnorge.com/tak), if you intend to use it elsewhere you might need to make adjustments.
+Contact us for MQTT login if you want to online your units on the ASN-TAK servers. 
 
-We can be found ond discord for any questions.
+We can be found ond [discord](https://discord.gg/m3yaCJWtAk) for any questions.
 
 # Moving parts
 
