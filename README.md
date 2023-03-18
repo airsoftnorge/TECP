@@ -72,7 +72,7 @@ Friendly is always cyan, enemy is always red, neutral is always green and unknow
   * All cyan dots are friendly players. 
 * Capture points in this map:
   * Alpha, Bravo, Charlie held by your team
-  * Delta is neutral.
+  * Delta is unknown.
   * Echo and Foxtrot is held by the enemy team.
 * Rally point:
   * Friendly rally point visible.
@@ -80,7 +80,7 @@ Friendly is always cyan, enemy is always red, neutral is always green and unknow
 * Spawns:
   * Both spawns are visible to both teams.
 * TAK Gateway:
-  * Displyed as yellow.
+  * Displyed as green emplacement.
 
 ### Current iconography:
 ![image](https://user-images.githubusercontent.com/25975089/226099443-4faafd48-147a-4c48-894b-2f4fcaa18a2d.png)
