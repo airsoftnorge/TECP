@@ -82,3 +82,7 @@ Friendly is always cyan, enemy is always red, neutral is always green and unknow
 * TAK Gateway:
   * Displyed as yellow.
 
+### Current iconography:
+![image](https://user-images.githubusercontent.com/25975089/226099443-4faafd48-147a-4c48-894b-2f4fcaa18a2d.png)
+
+
