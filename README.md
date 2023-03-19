@@ -79,6 +79,7 @@ Modifiers:
 # Ideas for future expansion
 
 * Have points revert to initial state after a set amount of time ✔️
+* Display status on the box.
 * Activate spawn points based on currently owned points.
 * Force capture order
 
