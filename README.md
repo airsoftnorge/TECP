@@ -78,8 +78,8 @@ Modifiers:
 
 # Ideas for future expansion
 
-* Have points revert to initial state after a set amount of time ✔️
-* Display status on the box.
+* Optional: Have points revert to initial state after a set amount of time ✔️
+* Optional: Support 16x2 LCD display giving you the state of the point. 
 * Activate spawn points based on currently owned points.
 * Force capture order
 
