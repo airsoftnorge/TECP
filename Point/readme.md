@@ -37,8 +37,7 @@ Example parts list:
 * Buttons
   * https://www.aliexpress.com/item/1005004710768369.html
 
-There are no specific needs in terms of parts, any compatible device can take any place here. It's probably easier to use a banana pi due to availability, any button will work and soforth.
-  
+All parts here are interchangible with any simmilar part, button is a button, any single board computer will do the trick.
   
 # Components
 
