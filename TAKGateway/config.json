@@ -1,6 +1,5 @@
 {
   "name": "TakGateway",
   "report_location": 1,
-  "report_location_helptext": "0/1 this decides if it should show up on the map or not.",
-  
+  "report_location_helptext": "0/1 this decides if it should show up on the map or not." 
 }
