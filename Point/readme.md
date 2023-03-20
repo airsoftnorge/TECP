@@ -25,7 +25,7 @@ Default GPIO pins are for colors are:
 On power off or restart of script it will revert to config.json 
 
 
-Example parts list:
+Example build list:
 * Pi Zero with headers
   * https://raspberrypi.dk/en/product/raspberry-pi-zero-wh-with-pre-soldered-header/
 * Meshtastic device
