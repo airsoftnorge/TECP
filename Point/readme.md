@@ -24,11 +24,21 @@ Default GPIO pins are for colors are:
 
 On power off or restart of script it will revert to config.json 
 
-Parts:
+
+Example parts list:
+* Pi Zero with headers
+  * https://raspberrypi.dk/en/product/raspberry-pi-zero-wh-with-pre-soldered-header/
+* Meshtastic device
+  * https://www.lilygo.cc/products/t-beam-v1-1-esp32-lora-module?variant=42204034990261
+* Build case
+  * https://www.planostore.com/plano-shot-shell-box-od-green
 * Buzzer
   * https://www.aliexpress.com/item/4000100829835.html
 * Buttons
   * https://www.aliexpress.com/item/1005004710768369.html
+
+There are no specific needs in terms of parts, any compatible device can take any place here. It's probably easier to use a banana pi due to availability, any button will work and soforth.
+  
   
 # Components
 
