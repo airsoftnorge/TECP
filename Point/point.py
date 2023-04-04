@@ -6,15 +6,21 @@
 #   /_/    /_____/   \____/  /_/
 #
 #
-# There is no differentiation based on mode currently, as this is expected to be for expansion or mostly handled by the gateway.
+
 
 import json
 import time
 
 import meshtastic
 import meshtastic.serial_interface
+
 from gpiozero import Button
 from gpiozero import Buzzer
+
+from rpi_lcd import LCD
+
+#Clean screen if something is still there:
+lcd.clear()
 
 # set up GPIO pins for buttons
 bz = Buzzer(23)
@@ -22,9 +28,10 @@ red_button = Button(17, bounce_time=0.05)
 blue_button = Button(22, bounce_time=0.05)
 yellow_button = Button(27, bounce_time=0.05)
 
-# Setup all default values:
+# Setup all default values, in case of partial configs.
 name = ""
 mode = ""
+display = 0
 start_color = ""
 capture_time = 30
 has_buzzer = 0
@@ -33,6 +40,7 @@ spawn_main_cycle = 30
 spawn_rally_cycle = 15
 spawn_cycle_timer = 0
 spawn_cycle_timer_start = time.time()
+color = start_color
 
 capture_self_reset = 0
 capture_self_reset_timer = 15
@@ -40,6 +48,8 @@ capture_self_reset_when = float(time.time() + 99999)
 
 spawn_last_spam = time.time()
 spawn_refresh_cycle = 2
+
+
 
 # load the configuration data from the JSON file
 with open("config.json", "r") as f:
@@ -51,15 +61,18 @@ with open("config.json", "r") as f:
 for key, value in config_data.items():
     globals()[key] = value
 
+
 def capture_self_reset_triggered():
     send_initial_state()
     capture_set_self_reset_when()
     buzzer_cap_complete()
 
+
 def capture_set_self_reset_when():
     if capture_self_reset == 1:
         self_reset_when = time.time()
         return self_reset_when
+
 
 def send_message(text):
     iface = meshtastic.serial_interface.SerialInterface()
@@ -77,6 +90,7 @@ def buzzer_cap_complete():
             bz.off()
             time.sleep(0.25)
 
+
 def buzzer_spawn_cycle():
     global spawn_cycle_timer_start
     print(f"Time for a {mode} respawn!")
@@ -92,13 +106,10 @@ def buzzer_spawn_cycle():
 
 
 # send initial state
+
 def send_initial_state():
     print(f"Sending initial state of the point")
-    # create a message to send in meshtastic
-    if mode == "rally":
-        send_message(f"/mesh/points/{name}/{mode}/status/{start_color}/{start_color}")
-    else:
-        send_message(f"/mesh/points/{name}/{mode}/status/{start_color}")
+    send_message(f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{color}</color><startcolor>{start_color}</startcolor></root>")
     print(f"Initial message sent")
 
 
@@ -110,18 +121,22 @@ def capture_complete(color):
     print(f"Point {name} has been captured by {color}!")
     if capture_self_reset == 1:
         capture_set_self_reset_when()
-    if mode == "rally":
-        send_message(f"/mesh/points/{name}/{mode}/status/{start_color}/{color}")
-        buzzer_cap_complete()
-    else:
-        send_message(f"/mesh/points/{name}/{mode}/status/{color}")
-        buzzer_cap_complete()
+    send_message(f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{color}</color><startcolor>{start_color}</startcolor></root>")
+    buzzer_cap_complete()
     print(f"Returning to looplife")
     time.sleep(5)
+    return (color)
+
+def printlcd(text:str,num:int):
+    if display == 1:
+        lcd.text(text, num)
+        time.sleep(0.25)
+
+
 
 
 def capture_time_check(button, color):
-    if button.is_held == True:
+    if button.is_held:
         if button.held_time < float(1):
             print(f"Capture attempt started by {color}.Capture time is {capture_time} seconds")
         if button.held_time > 1.5 * capture_time:
@@ -133,7 +148,7 @@ def capture_time_check(button, color):
 
 def spawn_refresh():
     print(f"Refreshing {start_color} spawn {name}")
-    send_message(f"/mesh/points/{name}/{mode}/status/{start_color}")
+    capture_complete(start_color)
     spawn_last_spam = time.time()
     return spawn_last_spam
 
