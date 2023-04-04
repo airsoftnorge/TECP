@@ -78,10 +78,14 @@ Modifiers:
 
 # Ideas for future expansion
 
-* Optional: Have points revert to initial state after a set amount of time ✔️
-* Optional: Support 16x2 LCD display giving you the state of the point. 
-* Activate spawn points based on currently owned points.
-* Force capture order
+* Added 
+     * Optional: Have points revert to initial state after a set amount of time 
+* To be added 
+     * Optional: Support 16x2 LCD display giving you the state of the point. 
+     * Optional: Off button logic to tell TAK the TECP box is out of play.
+* Undecided 
+     * Activate spawn points based on currently owned points.
+     * Force capture order
 
 
 # How we expect it to look once done
