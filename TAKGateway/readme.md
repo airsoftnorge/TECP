@@ -27,7 +27,7 @@ Must also have MQTT enabled to push points to our or your own mqtt server for pr
 Capturepoints -> Meshtastic -> Gateway -> ASN-MQTT Server
 * Pro: Don't have to configure anything custom or setup node-red or mqtt yourself
 * Con: You might want things to behave differently.
-* 
+ 
 Contact us on [discord](https://discord.gg/m3yaCJWtAk) for access if you want to utilize the ASN-TAK servers. 
 
 ### Self hosted
