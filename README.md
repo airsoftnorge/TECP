@@ -100,7 +100,7 @@ Friendly is always cyan, enemy is always red, neutral is always green and unknow
   * Echo and Foxtrot is held by the enemy team.
 * Rally point:
   * Friendly rally point visible.
-  * Enemy rally point not visible.
+  * Enemy active rally point not visible (Neutralized will show up).
 * Spawns:
   * Both spawns are visible to both teams.
 * TAK Gateway:
