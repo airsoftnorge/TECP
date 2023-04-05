@@ -36,8 +36,10 @@ On power off or restart of script it will revert to config.json
   * https://www.aliexpress.com/item/4000100829835.html
 * Buttons
   * https://www.aliexpress.com/item/1005004710768369.html
+* Screen
+  * https://www.aliexpress.com/item/1005001941636245.html
 
-All parts here are interchangible with any simmilar part, button is a button, any single board computer will do the trick.
+All parts here are interchangible with any simmilar part, button is a button, any single board computer will do the trick. Banana Pi is probably a much easier device to get a hold of multiple at once. Screen and buzzer is optional and you can build in whatever case you so desire. 
   
 # Components
 
