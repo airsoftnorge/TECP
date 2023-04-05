@@ -77,6 +77,10 @@ Modifiers:
 * Optional buzzer for audible respawn alert and deactivation alert.
 * Custom rally respawn time (Only makes sense with a buzzer).
 
+### Mode: Gateway
+Non-capturable points.
+
+Point you cannot interact with, but if you still want it on the map.
 
 # Ideas for future expansion
 
