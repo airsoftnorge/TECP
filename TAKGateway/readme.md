@@ -22,12 +22,19 @@ Must also have MQTT enabled to push points to our or your own mqtt server for pr
 ```meshtastic --set mqtt.enabled true --set mqtt.jsonEnabnled true --set mqtt.address mqtt.airsoftnorge.com:1883 --set mqtt.username "<your username>" --set mqtt.password "<your password>" ```
 
 # Setup options:
-### Hosted
-Capturepoints -> Gateway -> External MQTT -> Node-Red combines information needed -> Send COTs to the game TAK servers.
+
+### ASN-TAK Infrastructure
+Capturepoints -> Meshtastic -> Gateway -> ASN-MQTT Server
+* Pro: Don't have to configure anything custom or setup node-red or mqtt yourself
+* Con: You might want things to behave differently.
+Contact us on [discord](https://discord.gg/m3yaCJWtAk) for access if you want to utilize the ASN-TAK servers. 
+
+### Self hosted
+Capturepoints -> Meshtastic -> Gateway -> External MQTT -> Node-Red combines information needed -> Send COTs to the game TAK servers.
 * Pro: Server is remotely accessible for game-admin purposes.
 * Con: 4 dollars a month.
 ### Local
-Capturepoints -> Gateway -> Internal MQTT -> Node-Red combines information needed -> Send COTs to the game TAK servers.
+Capturepoints -> Meshtastic -> Gateway -> Internal MQTT -> Node-Red combines information needed -> Send COTs to the game TAK servers.
 * Pro: Don't need another server.
 * Con: cannot adjust anything without physical access.
 
