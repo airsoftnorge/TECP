@@ -9,15 +9,15 @@
 
 Meshtastic gateway is just a normal point, it requires a internet connection. You can use this as a normal capture point or a dedicated gateway in the mode settings for the point.
 
-Meshtastic device must have serial enabled. 
+Meshtastic device must have serial enabled and echo back:
 
-```meshtastic --set serial.enabled true ```
+```meshtastic --set serial.enabled true --set serial.echo true```
 
 Meshtastic gateway device must be on the correct channel and have uplink enabled:
 
 ```meshtastic --ch-set name ASN --ch-index 0 --ch-set channel_num 1 --ch-index 0 --ch-set psk <PSK> --ch-medfast --set lora.region EU_868 --set serial.enabled true --ch-set uplink_enabled true```
 
-Must also have MQTT enabled to push points to our or your own mqtt server for processing and shipping to each server.
+Must also have MQTT enabled to push points to our or your own mqtt server for processing and shipping to each server:
 
 ```meshtastic --set mqtt.enabled true --set mqtt.jsonEnabnled true --set mqtt.address mqtt.airsoftnorge.com:1883 --set mqtt.username "<your username>" --set mqtt.password "<your password>" ```
 
@@ -33,6 +33,7 @@ Contact us on [discord](https://discord.gg/m3yaCJWtAk) for access if you want to
 Capturepoints -> Meshtastic -> Gateway -> External MQTT -> Node-Red combines information needed -> Send COTs to the game TAK servers.
 * Pro: Server is remotely accessible for game-admin purposes.
 * Con: 4 dollars a month.
+ 
 ### Local
 Capturepoints -> Meshtastic -> Gateway -> Internal MQTT -> Node-Red combines information needed -> Send COTs to the game TAK servers.
 * Pro: Don't need another server.
