@@ -8,7 +8,7 @@
   "capture_self_reset": 0,
   "capture_self_reset_description": "1/0 if the point should revert back to its start color after a set amount of time.",
   "capture_self_reset_timer": 15,
-  "capture_self_reset_timer_description": "The amount of time in minutes before a point reverts back to its original color.",
+  "capture_self_reset_timer_description": "The amount of time in minutes before a point reverts back to its original color if capture_self_reset is 1.",
   "capture_time": 30,
   "capture_time_description": "How many seconds it will take to change the color of a capture point or disable a rally point.",
   "start_color": "red",
@@ -21,6 +21,6 @@
   "spawn_main_cycle_description": "Specify the amount of minutes between each main spawn cycle, leading to a buzz being played by the spawn points when respawn is due.",
   "spawn_rally_cycle": 2,
   "spawn_rally_cycle_description": "Specify the amount of minutes between each rally spawn cycle, leading to a buzz being played by the spawn points when respawn is due.",
-  "spawn_refresh_cycle": 2,
-  "spawn_refresh_cycle_description": "How many minutes between each time the spawn point refreshes it location to the MQTT."
+  "refresh_cycle": 15,
+  "refresh_cycle_description": "How many minutes between each time the spawn point refreshes it location to the MQTT."
 }
