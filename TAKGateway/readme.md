@@ -7,9 +7,15 @@
 ```         
 # TECP Gateway
 
+Meshtastic gateway is just a normal point, it requires a internet connection. You can use this as a normal capture point or a dedicated gateway in the mode settings for the point.
+
 Meshtastic device must have serial enabled. 
 
 ```meshtastic --set serial.enabled true ```
+
+Meshtastic gateway device must be on the correct channel and have uplink enabled:
+
+```meshtastic --ch-set name ASN --ch-index 0 --ch-set channel_num 1 --ch-index 0 --ch-set psk <PSK> --ch-medfast --set lora.region EU_868 --set serial.enabled true --ch-set uplink_enabled true```
 
 Must also have MQTT enabled to push points to our or your own mqtt server for processing and shipping to each server.
 
