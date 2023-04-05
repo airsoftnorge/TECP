@@ -41,7 +41,4 @@ You can setup your own or contact us on [discord](https://discord.gg/m3yaCJWtAk)
 
 Sorting for color, determining if the point is friendly, enemy or unknown based on server color. 
 
-![image](https://user-images.githubusercontent.com/25975089/226060472-1ecdc5b5-f941-4188-abb2-31b723fafa18.png)
-
-Getting location variables for input not yet decided upon. 
-Might store info in a sqlite db if needed, unknown at this time. 
+![image](https://user-images.githubusercontent.com/25975089/230047472-9fe03f09-921d-4594-9074-277304cbab70.png)
