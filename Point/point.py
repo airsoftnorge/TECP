@@ -65,13 +65,15 @@ def send_message(text):
 def buzzer_cap_complete():
     print(f"Playing capture sound")
     if has_buzzer == 1:
+        print("BE BE BE BEEP")
         for i in range(3):
             bz.on()
-            print(f"BEEP")
             time.sleep(0.1)
             bz.off()
             time.sleep(0.1)
-
+        bz.on()
+        time.sleep(0.2)
+        bz.off()
 
 def buzzer_spawn_cycle():
     global spawn_cycle_timer_start
