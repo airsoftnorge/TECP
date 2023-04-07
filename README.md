@@ -118,4 +118,5 @@ Friendly is always cyan, enemy is always red, neutral is always green and unknow
 
 
 ### Demo
-https://www.youtube.com/embed/uqSNmWwnnss
+
+https://youtu.be/sNUket2YNQc
