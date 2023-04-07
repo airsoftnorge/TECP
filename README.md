@@ -32,11 +32,13 @@ We can be found ond [discord](https://discord.gg/m3yaCJWtAk) for any questions.
 ## TAK Gateway 
 
 Responsible for bringing points and statuses of points from the meshtastic network to the TAK servers in a COT format.
-Differentiate between rally points, spawns and capture points. 
+Differentiate between rally points, spawns and capture points. It's just a point like all others, but require a internet connection to work as the gateway.
+
+It can be a standalone point using `gateway` as mode or be any other point mode as described below. 
 
 * TAKGateway displayed as neutral green: ![image](https://user-images.githubusercontent.com/25975089/226063791-ca2dff6c-61ee-4033-b3bf-3df42e37ee06.png)
 
-Full configuration found [here](https://github.com/airsoftnorge/TECP/blob/main/TAKGateway/config.json)
+See [gateway documentation](https://github.com/airsoftnorge/TECP/blob/main/TAKGateway/readme.md).
 
 ## Points
 Each point contains a raspberry pi and a meshtastic device. Capture mode units will also contain a set of push buttons to interact with GPIO to let players capture them.
@@ -75,6 +77,10 @@ Modifiers:
 * Optional buzzer for audible respawn alert and deactivation alert.
 * Custom rally respawn time (Only makes sense with a buzzer).
 
+### Mode: Gateway
+Non-capturable points.
+
+Point you cannot interact with, but if you still want it on the map.
 
 # Ideas for future expansion
 
@@ -100,7 +106,7 @@ Friendly is always cyan, enemy is always red, neutral is always green and unknow
   * Echo and Foxtrot is held by the enemy team.
 * Rally point:
   * Friendly rally point visible.
-  * Enemy rally point not visible.
+  * Enemy active rally point not visible (Neutralized will show up).
 * Spawns:
   * Both spawns are visible to both teams.
 * TAK Gateway:
