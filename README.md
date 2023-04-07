@@ -85,10 +85,11 @@ Point you cannot interact with, but if you still want it on the map.
 # Ideas for future expansion
 
 * Added 
-     * Optional: Have points revert to initial state after a set amount of time 
-* To be added 
+     * Optional: Have points revert to initial state after a set amount of time
      * Optional: Support 16x2 LCD display giving you the state of the point. 
+* To be added 
      * Optional: Off button logic to tell TAK the TECP box is out of play.
+     * Optional: RGB LED support, for simpler waterproofign i suppose.. ¯\_(ツ)_/¯
 * Undecided 
      * Activate spawn points based on currently owned points.
      * Force capture order
