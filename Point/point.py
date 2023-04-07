@@ -27,19 +27,18 @@ with open("config.json", "r") as f:
     for key, value in config_data.items():
         globals()[key] = value
         print(f"{key}:{value}")
-color = str(start_color)
 
 # Set up variables:
 spawn_last_spam = time.time()
 spawn_cycle_timer_start = time.time()
 capture_self_reset_when = float(time.time() + 99999)
 capture_time = float(capture_time)
-
+color = str(start_color)
 # set up GPIO pins for buttons
 bz = Buzzer(23)
-red_button = Button(17, bounce_time=0.1)
-blue_button = Button(22, bounce_time=0.1)
-yellow_button = Button(27, bounce_time=0.1)
+red_button = Button(17, bounce_time=0.025)
+blue_button = Button(22, bounce_time=0.025)
+yellow_button = Button(27, bounce_time=0.025)
 
 # Clear any LCD junk if you have it..
 lcd.clear()
@@ -69,20 +68,20 @@ def buzzer_cap_complete():
         for i in range(3):
             bz.on()
             print(f"BEEP")
-            time.sleep(0.25)
+            time.sleep(0.1)
             bz.off()
-            time.sleep(0.25)
+            time.sleep(0.1)
 
 
 def buzzer_spawn_cycle():
     global spawn_cycle_timer_start
     print(f"Time for a {mode} respawn!")
-    for i in range(3):
+    for i in range(5):
         bz.on()
         print(f"BEEP")
         time.sleep(0.25)
         bz.off()
-        time.sleep(0.25)
+        time.sleep(0.1)
     print(f"Resetting spawn cycle!")
     spawn_cycle_timer_start = time.time()
     return spawn_cycle_timer_start
@@ -91,32 +90,39 @@ def buzzer_spawn_cycle():
 def displaytext(text, line):
     if display == 1:
         lcd.text(text, line)
+def set_color(newcolor):
+    global color
+    color = newcolor
 
-
-def capture_complete(color):
-    print(f"Point {name} has been captured by {color}!")
+def capture_complete(teamcolor):
+    print(f"Point {name} has been captured by {teamcolor}!")
     displaytext(f"{mode.upper()} POINT", 1)
-    displaytext(f"{color.upper()}", 2)
+    displaytext(f"{teamcolor.upper()}", 2)
+
+    #Set new color for the point
+    set_color(teamcolor)
+
     if capture_self_reset == 1:
         capture_set_self_reset_when()
     send_message(
-        f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{color}</color><startcolor>{start_color}</startcolor></root>")
+        f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{teamcolor}</color><startcolor>{start_color}</startcolor></root>")
     buzzer_cap_complete()
     print(f"Returning to looplife")
     time.sleep(5)
 
 
-def capture_time_check(button, color):
+def capture_time_check(button, buttoncolor):
     while button.is_held:
-        if button.held_time < capture_time:
-            displaytext(f"Capturing: ({math.trunc(capture_time - button.held_time)})", 2)
-        if button.held_time > capture_time:
-            print(f"Capture completed by {color}, held for {button.held_time}.")
-            capture_complete(color)
-
-    displaytext(f"{mode.upper()} POINT", 1)
-    displaytext(f"{color.upper()}", 2)
-
+        try:
+            if button.held_time < capture_time:
+                displaytext(f"Capturing: ({math.trunc(capture_time - button.held_time)})", 2)
+            if button.held_time > capture_time:
+                print(f"Capture completed by {buttoncolor}, held for {button.held_time}.")
+                capture_complete(buttoncolor)
+        except:
+            displaytext(f"{mode.upper()} POINT", 1)
+            displaytext(f"Aborted", 2)
+            time.sleep(1)
 
 def refresh():
     print(f"Refreshing {start_color} spawn {name}")
@@ -141,9 +147,12 @@ def send_initial_state():
     send_message(
         f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{color}</color><startcolor>{start_color}</startcolor></root>")
     displaytext(f"{mode.upper()} POINT", 1)
-    displaytext(f"{color.upper()}", 2)
+    displaytext(f"{start_color.upper()}", 2)
     print(f"Initial message sent")
 
+def displaystatus():
+    displaytext(f"{mode.upper()} POINT", 1)
+    displaytext(f"{color.upper()}", 2)
 
 # Sending initial state from config.json
 send_initial_state()
@@ -178,5 +187,6 @@ while True:
         if mode == "rally" and time.time() - spawn_cycle_timer_start >= spawn_rally_cycle * 60:
             buzzer_spawn_cycle()
 
+    displaystatus()
     # sleep for a short amount of time to avoid consuming too much CPU
     time.sleep(0.1)
