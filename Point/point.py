@@ -138,18 +138,17 @@ if display == 1:
     displaytext("TECP", 1)
     displaytext("ASN-TAK", 2)
     time.sleep(2)
-    lcd.clear()
+
 
 
 # send initial state
 def send_initial_state():
     print(f"Sending initial state of the point:")
+    displaystatus()
     print(
         f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{color}</color><startcolor>{start_color}</startcolor></root>")
     send_message(
         f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{color}</color><startcolor>{start_color}</startcolor></root>")
-    displaytext(f"{mode.upper()} POINT", 1)
-    displaytext(f"{start_color.upper()}", 2)
     print(f"Initial message sent")
 
 def displaystatus():
@@ -170,9 +169,9 @@ while True:
             capture_self_reset_triggered()
 
     # Spam spawn status at frequent intervals
-    if time.time() > spawn_last_spam + spawn_refresh_cycle * 60:
-        spawn_refresh()
-
+    if mode == "spawn":
+        if time.time() > spawn_last_spam + spawn_refresh_cycle * 60:
+            spawn_refresh()
     # Check for button presses:
     if blue_button.is_active:
         capture_time_check(blue_button, "blue")
