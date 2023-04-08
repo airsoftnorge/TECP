@@ -116,11 +116,27 @@ def capture_complete(teamcolor):
     time.sleep(5)
 
 
+def sticky_key(buttoncolor):
+    print(f"{buttoncolor} button is stuck!")
+    displaytext(f"STICKY KEY!", 1)
+    displaytext(f"{buttoncolor.upper()} STUCK!", 2)
+    for i in range(5):
+        bz.on()
+        time.sleep(0.1)
+        bz.off()
+        time.sleep(0.2)
+    time.sleep(1)
+    
+
 def capture_time_check(button, buttoncolor):
     while button.is_held:
         try:
             if button.held_time < capture_time:
                 displaytext(f"Capturing: ({math.trunc(capture_time - button.held_time)})", 2)
+            if button.held_time > 1.75 * capture_time:
+                print(f"The {buttoncolor} is stuck or someone is being slow on purpose")
+                sticky_key(buttoncolor)
+                return
             if button.held_time > capture_time:
                 print(f"Capture completed by {buttoncolor}, held for {button.held_time}.")
                 capture_complete(buttoncolor)
@@ -128,6 +144,8 @@ def capture_time_check(button, buttoncolor):
             displaytext(f"{mode.upper()} POINT", 1)
             displaytext(f"Aborted", 2)
             time.sleep(1)
+
+
 
 
 def refresh():
@@ -139,7 +157,7 @@ def refresh():
 
 # Be cool and show off
 if display == 1:
-    displaytext("TECP", 1)
+    displaytext("TECP 0.02", 1)
     displaytext("ASN-TAK", 2)
     time.sleep(2)
 
@@ -194,4 +212,4 @@ while True:
 
     displaystatus()
     # sleep for a short amount of time to avoid consuming too much CPU
-    time.sleep(0.1)
+    time.sleep(0.2)
