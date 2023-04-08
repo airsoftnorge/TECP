@@ -75,6 +75,7 @@ def buzzer_cap_complete():
         time.sleep(0.2)
         bz.off()
 
+
 def buzzer_spawn_cycle():
     global spawn_cycle_timer_start
     print(f"Time for a {mode} respawn!")
@@ -92,22 +93,24 @@ def buzzer_spawn_cycle():
 def displaytext(text, line):
     if display == 1:
         lcd.text(text, line)
+
+
 def set_color(newcolor):
     global color
     color = newcolor
+
 
 def capture_complete(teamcolor):
     print(f"Point {name} has been captured by {teamcolor}!")
     displaytext(f"{mode.upper()} POINT", 1)
     displaytext(f"{teamcolor.upper()}", 2)
 
-    #Set new color for the point
+    # Set new color for the point
     set_color(teamcolor)
 
     if capture_self_reset == 1:
         capture_set_self_reset_when()
-    send_message(
-        f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{teamcolor}</color><startcolor>{start_color}</startcolor></root>")
+    send_message(f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{teamcolor}</color><startcolor>{start_color}</startcolor></root>")
     buzzer_cap_complete()
     print(f"Returning to looplife")
     time.sleep(5)
@@ -126,6 +129,7 @@ def capture_time_check(button, buttoncolor):
             displaytext(f"Aborted", 2)
             time.sleep(1)
 
+
 def refresh():
     print(f"Refreshing {start_color} spawn {name}")
     capture_complete(start_color)
@@ -140,20 +144,20 @@ if display == 1:
     time.sleep(2)
 
 
-
 # send initial state
 def send_initial_state():
     print(f"Sending initial state of the point:")
     displaystatus()
     print(
         f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{color}</color><startcolor>{start_color}</startcolor></root>")
-    send_message(
-        f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{color}</color><startcolor>{start_color}</startcolor></root>")
+    send_message(f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{color}</color><startcolor>{start_color}</startcolor></root>")
     print(f"Initial message sent")
+
 
 def displaystatus():
     displaytext(f"{mode.upper()} POINT", 1)
     displaytext(f"{color.upper()}", 2)
+
 
 # Sending initial state from config.json
 send_initial_state()
