@@ -152,6 +152,12 @@ def capture_time_check(button, buttoncolor):
 def point_refresh():
     print(f"Refreshing point {name.upper()}")
     send_message(f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{color}</color><startcolor>{start_color}</startcolor></root>")
+
+    # Display info
+    displaytext(f"Refreshed point", 1)
+    displaytext(f"{name}", 2)
+
+    # Return the global
     global point_refresh_time
     point_refresh_time = time.time()
     return spawn_last_spam
