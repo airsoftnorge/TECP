@@ -57,8 +57,7 @@ Capturable points by holding down a button for a configurable amount of time. Up
 Modifiers:
 * Customizable capture time.
 * Optional buzzer for audible capture.
-* Permanent capture (default).
-* Self resetting to initial color after a set amount of time.
+* Optional: Revert to original color after x time (Default is permanent and requires a re-capture to revert to other colors)
 
 
 ### Mode: Spawn
@@ -66,16 +65,16 @@ Non-capturable points.
 
 Modifiers:
 * Optional buzzer for audible respawn alert.
-* Custom rally respawn time (Only makes sense with a buzzer).
+* Custom respawn time interval (Only makes sense with a buzzer).
 
 ### Mode: Rally
 Rally points are only seen to the color they are configured for, acts as a moveable spawn point for one side.
 Can be disabled by other team if found and must be re-enabled to work.
 
 Modifiers:
-* Customizable deactivation time.
+* Customizable capture time. (Or deactivation)
 * Optional buzzer for audible respawn alert and deactivation alert.
-* Custom rally respawn time (Only makes sense with a buzzer).
+* Custom respawn time interval (Only makes sense with a buzzer).
 
 ### Mode: Gateway
 Non-capturable points.
