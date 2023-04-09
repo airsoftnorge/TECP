@@ -24,7 +24,7 @@ Meshtastic device must have serial enabled.
   * GND (Pin 25)
 * Buzzer +
   * GPIO 23 (Pin 16)
-  * GND (Pin 25)
+  * GND (Pin 14)
 * 1602 display
   * GPIO 02 (Pin 3) - SDB
   * GPIO 03 (Pin 5) - SDA
