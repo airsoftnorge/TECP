@@ -159,7 +159,7 @@ def point_refresh():
 
 # Be cool and show off
 def tecpinfo():
-    displaytext("TECP 0.02", 1)
+    displaytext("TECP 0.03", 1)
     displaytext("ASN-TAK", 2)
     time.sleep(2)
 
