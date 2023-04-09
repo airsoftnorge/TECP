@@ -54,8 +54,9 @@ def capture_self_reset_triggered():
 
 def capture_set_self_reset_when():
     if capture_self_reset == 1:
-        self_reset_when = time.time()
-        return self_reset_when
+        global self_reset_when
+        self_reset_when = time.time() + (capture_self_reset_timer * 60)
+        return
 
 
 def send_message(text):
@@ -171,7 +172,7 @@ def point_refresh():
 
 # Be cool and show off
 def tecpinfo():
-    displaytext("TECP 0.03", 1)
+    displaytext("TECP 0.05", 1)
     displaytext("ASN-TAK", 2)
     time.sleep(2)
 
