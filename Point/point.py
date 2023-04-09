@@ -78,17 +78,22 @@ def buzzer_cap_complete():
         bz.off()
 
 
-def buzzer_spawn_cycle():
+def spawn_cycle_trigger():
     global spawn_cycle_timer_start
     print(f"Time for a {mode} respawn!")
+    displaytext(f"SPAWN WAVE IN",1)
     for i in range(5):
         bz.on()
         print(f"BEEP")
-        time.sleep(0.25)
+        time.sleep(0.2)
         bz.off()
-        time.sleep(0.1)
+        time.sleep(0.8)
+        displaytext(f"{5-i}", 2)
+    displaytext(f"SPAWN WAVE",1)
+    displaytext(f"ACTIVE", 2)
     print(f"Resetting spawn cycle!")
     spawn_cycle_timer_start = time.time()
+    time.sleep(10)
     return
 
 
@@ -161,7 +166,7 @@ def point_refresh():
     # Return the global
     global point_refresh_time
     point_refresh_time = time.time()
-    return 
+    return
 
 
 # Be cool and show off
@@ -176,9 +181,9 @@ def send_initial_state():
     print(f"Sending initial state of the point:")
     displaystatus()
     print(
-        f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{color}</color><startcolor>{start_color}</startcolor></root>")
+        f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{start_color}</color><startcolor>{start_color}</startcolor></root>")
     send_message(
-        f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{color}</color><startcolor>{start_color}</startcolor></root>")
+        f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{start_color}</color><startcolor>{start_color}</startcolor></root>")
     print(f"Initial message sent")
 
 
@@ -221,9 +226,9 @@ while True:
     if has_buzzer == 1:
         # Check if it's time to respawn.
         if mode == "spawn" and time.time() - spawn_cycle_timer_start >= spawn_main_cycle * 60:
-            buzzer_spawn_cycle()
+            spawn_cycle_trigger()
         if mode == "rally" and time.time() - spawn_cycle_timer_start >= spawn_rally_cycle * 60:
-            buzzer_spawn_cycle()
+            spawn_cycle_trigger()
     # Refresh point so the marker does not go stale
     if time.time() >= point_refresh_time + (point_refresh_cycle * 60):
         point_refresh()
