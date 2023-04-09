@@ -13,14 +13,18 @@ Meshtastic device must have serial enabled.
 
 #### Pins are assumed in the program to match the following:
 
-* Red button +
+* Red button 
   * GPIO 17 (Pin 11)
+  * GND (Pin 25)
 * Blue button + 
   * GPIO 22 (Pin 15)
+  * GND (Pin 25)
 * Yellow button +
   * GPIO 27 (Pin 13)
+  * GND (Pin 25)
 * Buzzer +
   * GPIO 23 (Pin 16)
+  * GND (Pin 25)
 * 1602 display
   * GPIO 02 (Pin 3) - SDB
   * GPIO 03 (Pin 5) - SDA
