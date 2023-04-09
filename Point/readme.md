@@ -28,8 +28,8 @@ Meshtastic device must have serial enabled.
 * 1602 display
   * GPIO 02 (Pin 3) - SDB
   * GPIO 03 (Pin 5) - SDA
-  * GPIO 5v (Pin 4) - VCC
-  * GPIO GND (Pin 6) - GND
+  * 5v (Pin 4) - VCC
+  * GND (Pin 6) - GND
     
 Reference for pins:
 
