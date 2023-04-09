@@ -11,16 +11,26 @@ When running in conjunction with a meshtastic device will publish default inform
 Meshtastic device must have serial enabled. 
 ```meshtastic --set serial.enabled true ```
 
-Default GPIO pins are for colors are:
+Default GPIO pins are:
 
-* Red
-  * GPIO 17
-* Blue
-  * GPIO 22
-* Yellow
-  * GPIO 27
-* Buzzer
+* Red button +
+  * GPIO 17 (Pin 11)
+* Blue button + 
+  * GPIO 22 (Pin 15)
+* Yellow button +
+  * GPIO 27 (Pin 13)
+* Buzzer +
   * GPIO 23
+* 1602 display
+  * GPIO 02 (Pin 3) - SDB
+  * GPIO 03 (Pin 5) - SDA
+  * GPIO 5v (Pin 4) - VCC
+  * GPIO GND (Pin 6) - GND
+    
+Reference for pins:
+
+![image](https://user-images.githubusercontent.com/25975089/230800721-6f9b2a26-ac37-4fce-bc4b-4ee5b8916710.png)
+
 
 On power off or restart of script it will revert to config.json 
 
