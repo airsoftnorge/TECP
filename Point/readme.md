@@ -11,7 +11,7 @@ When running in conjunction with a meshtastic device will publish default inform
 Meshtastic device must have serial enabled. 
 ```meshtastic --set serial.enabled true ```
 
-Default GPIO pins are:
+#### Pins are assumed in the program to match the following:
 
 * Red button +
   * GPIO 17 (Pin 11)
