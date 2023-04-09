@@ -34,6 +34,7 @@ spawn_cycle_timer_start = time.time()
 capture_self_reset_when = float(time.time() + 99999)
 capture_time = float(capture_time)
 color = str(start_color)
+point_refresh_time = time.time()
 # set up GPIO pins for buttons
 bz = Buzzer(23)
 red_button = Button(17, bounce_time=0.025)
@@ -102,15 +103,16 @@ def set_color(newcolor):
 
 def capture_complete(teamcolor):
     print(f"Point {name} has been captured by {teamcolor}!")
-    displaytext(f"{mode.upper()} POINT", 1)
-    displaytext(f"{teamcolor.upper()}", 2)
-
+    if display == 1:
+        displaytext(f"{mode.upper()} POINT", 1)
+        displaytext(f"{teamcolor.upper()}", 2)
     # Set new color for the point
     set_color(teamcolor)
 
     if capture_self_reset == 1:
         capture_set_self_reset_when()
-    send_message(f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{teamcolor}</color><startcolor>{start_color}</startcolor></root>")
+    send_message(
+        f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{teamcolor}</color><startcolor>{start_color}</startcolor></root>")
     buzzer_cap_complete()
     print(f"Returning to looplife")
     time.sleep(5)
@@ -120,20 +122,21 @@ def sticky_key(buttoncolor):
     print(f"{buttoncolor} button is stuck!")
     displaytext(f"STICKY KEY!", 1)
     displaytext(f"{buttoncolor.upper()} STUCK!", 2)
-    for i in range(5):
-        bz.on()
-        time.sleep(0.1)
-        bz.off()
-        time.sleep(0.2)
+    if has_buzzer == 1:
+        for i in range(5):
+            bz.on()
+            time.sleep(0.1)
+            bz.off()
+            time.sleep(0.2)
     time.sleep(1)
-    
+
 
 def capture_time_check(button, buttoncolor):
     while button.is_held:
         try:
             if button.held_time < capture_time:
                 displaytext(f"Capturing: ({math.trunc(capture_time - button.held_time)})", 2)
-            if button.held_time > 1.75 * capture_time:
+            if button.held_time > 1.5 * capture_time:
                 print(f"The {buttoncolor} is stuck or someone is being slow on purpose")
                 sticky_key(buttoncolor)
                 return
@@ -146,17 +149,16 @@ def capture_time_check(button, buttoncolor):
             time.sleep(1)
 
 
-
-
-def refresh():
-    print(f"Refreshing {start_color} spawn {name}")
-    capture_complete(start_color)
-    spawn_last_spam = time.time()
+def point_refresh():
+    print(f"Refreshing point {name.upper()}")
+    send_message(f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{color}</color><startcolor>{start_color}</startcolor></root>")
+    global point_refresh_time
+    point_refresh_time = time.time()
     return spawn_last_spam
 
 
 # Be cool and show off
-if display == 1:
+def tecpinfo():
     displaytext("TECP 0.02", 1)
     displaytext("ASN-TAK", 2)
     time.sleep(2)
@@ -168,7 +170,8 @@ def send_initial_state():
     displaystatus()
     print(
         f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{color}</color><startcolor>{start_color}</startcolor></root>")
-    send_message(f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{color}</color><startcolor>{start_color}</startcolor></root>")
+    send_message(
+        f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{color}</color><startcolor>{start_color}</startcolor></root>")
     print(f"Initial message sent")
 
 
@@ -177,7 +180,12 @@ def displaystatus():
     displaytext(f"{color.upper()}", 2)
 
 
+# Show tecp version
+
+tecpinfo()
+
 # Sending initial state from config.json
+
 send_initial_state()
 
 # loop forever
@@ -209,7 +217,11 @@ while True:
             buzzer_spawn_cycle()
         if mode == "rally" and time.time() - spawn_cycle_timer_start >= spawn_rally_cycle * 60:
             buzzer_spawn_cycle()
+    # Refresh point so the marker does not go stale
+    if time.time() >= point_refresh_time + (point_refresh_cycle * 60):
+        point_refresh()
 
+    # Refresh screen in case fuckery
     displaystatus()
     # sleep for a short amount of time to avoid consuming too much CPU
     time.sleep(0.2)

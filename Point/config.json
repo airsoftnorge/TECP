@@ -15,10 +15,10 @@
   "start_color_description": "Select between `red`, `yellow`, `green` or `blue`. Yellow in this context means unknown. Green is neutral.",
   "has_buzzer": 1,
   "has_buzzer_description": "1/0 if a buzzer is connected it will play 3 beeps when capture has completed.",
-  "spawn_main_cycle": 2,
+  "spawn_main_cycle": 15,
   "spawn_main_cycle_description": "Specify the amount of minutes between each main spawn cycle, leading to a buzz being played by the spawn points when respawn is due.",
   "spawn_rally_cycle": 2,
   "spawn_rally_cycle_description": "Specify the amount of minutes between each rally spawn cycle, leading to a buzz being played by the spawn points when respawn is due.",
-  "spawn_refresh_cycle": 15,
-  "spawn_refresh_cycle_description": "How many minutes between each time the spawn point refreshes it location to the MQTT."
+  "point_refresh_cycle": 15,
+  "point_refresh_cycle_description": "How many minutes between each time the spawn point refreshes it location to the MQTT."
 }
