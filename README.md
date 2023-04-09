@@ -12,6 +12,7 @@ Do not use or try to make sense of.. public for sanity checking reasons.
 
 # Idea
 Have physical points of interest that can be captured and have them reflect which teams hold which points on their Team Awareness Kit (TAK) End user device (EUD).
+
 Make the programming as easy to modify as possible, to enable new ideas to quickly be implemented. 
 
 # Features and anti-features 
