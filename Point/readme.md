@@ -20,7 +20,7 @@ Meshtastic device must have serial enabled.
 * Yellow button +
   * GPIO 27 (Pin 13)
 * Buzzer +
-  * GPIO 23
+  * GPIO 23 (Pin 16)
 * 1602 display
   * GPIO 02 (Pin 3) - SDB
   * GPIO 03 (Pin 5) - SDA
