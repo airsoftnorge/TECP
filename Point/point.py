@@ -33,6 +33,7 @@ spawn_last_spam = time.time()
 spawn_cycle_timer_start = time.time()
 capture_self_reset_when = float(time.time() + 99999)
 capture_time = float(capture_time)
+point_refresh_cycle = float(point_refresh_cycle)
 color = str(start_color)
 point_refresh_time = time.time()
 # set up GPIO pins for buttons
@@ -41,7 +42,7 @@ red_button = Button(17, bounce_time=0.025)
 blue_button = Button(22, bounce_time=0.025)
 yellow_button = Button(27, bounce_time=0.025)
 
-# Clear any LCD junk if you have it..
+# Clear any LCD junk if you have it...
 lcd.clear()
 
 
