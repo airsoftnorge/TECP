@@ -156,7 +156,7 @@ def point_refresh():
     # Display info
     displaytext(f"Refreshed point", 1)
     displaytext(f"{name}", 2)
-
+    time.sleep(2)
     # Return the global
     global point_refresh_time
     point_refresh_time = time.time()
