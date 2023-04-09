@@ -172,7 +172,7 @@ def point_refresh():
 
 # Be cool and show off
 def tecpinfo():
-    displaytext("TECP 0.05", 1)
+    displaytext("TECP 0.06", 1)
     displaytext("ASN-TAK", 2)
     time.sleep(2)
 
@@ -189,8 +189,12 @@ def send_initial_state():
 
 
 def displaystatus():
-    displaytext(f"{mode.upper()} POINT", 1)
-    displaytext(f"{color.upper()}", 2)
+    if mode == "rally" and color == "yellow":
+        displaytext(f"{mode.upper()} POINT", 1)
+        displaytext(f"NEUTRALIZED", 2)
+    else:
+        displaytext(f"{mode.upper()} POINT", 1)
+        displaytext(f"{color.upper()}", 2)
 
 
 # Show tecp version
