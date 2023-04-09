@@ -89,7 +89,7 @@ def buzzer_spawn_cycle():
         time.sleep(0.1)
     print(f"Resetting spawn cycle!")
     spawn_cycle_timer_start = time.time()
-    return spawn_cycle_timer_start
+    return
 
 
 def displaytext(text, line):
@@ -161,7 +161,7 @@ def point_refresh():
     # Return the global
     global point_refresh_time
     point_refresh_time = time.time()
-    return spawn_last_spam
+    return 
 
 
 # Be cool and show off
