@@ -82,15 +82,15 @@ def buzzer_cap_complete():
 def spawn_cycle_trigger():
     global spawn_cycle_timer_start
     print(f"Time for a {mode} respawn!")
-    displaytext(f"SPAWN WAVE IN",1)
+    displaytext(f"SPAWN WAVE IN", 1)
     for i in range(5):
         bz.on()
         print(f"BEEP")
         time.sleep(0.2)
         bz.off()
         time.sleep(0.8)
-        displaytext(f"{5-i}", 2)
-    displaytext(f"SPAWN WAVE",1)
+        displaytext(f"{5 - i}", 2)
+    displaytext(f"SPAWN WAVE", 1)
     displaytext(f"ACTIVE", 2)
     print(f"Resetting spawn cycle!")
     spawn_cycle_timer_start = time.time()
@@ -110,19 +110,17 @@ def set_color(newcolor):
 
 def capture_complete(teamcolor):
     print(f"Point {name} has been captured by {teamcolor}!")
-    if display == 1:
-        displaytext(f"{mode.upper()} POINT", 1)
-        displaytext(f"{teamcolor.upper()}", 2)
     # Set new color for the point
     set_color(teamcolor)
-
+    # Update display
+    displaystatus()
     if capture_self_reset == 1:
         capture_set_self_reset_when()
     send_message(
         f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{teamcolor}</color><startcolor>{start_color}</startcolor></root>")
     buzzer_cap_complete()
     print(f"Returning to looplife")
-    time.sleep(5)
+    time.sleep(1)
 
 
 def sticky_key(buttoncolor):
@@ -158,7 +156,8 @@ def capture_time_check(button, buttoncolor):
 
 def point_refresh():
     print(f"Refreshing point {name.upper()}")
-    send_message(f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{color}</color><startcolor>{start_color}</startcolor></root>")
+    send_message(
+        f"<?xml version=1.0 encoding=UTF-8 ?><root><name>{name}</name><mode>{mode}</mode><color>{color}</color><startcolor>{start_color}</startcolor></root>")
 
     # Display info
     displaytext(f"Refreshed point", 1)
