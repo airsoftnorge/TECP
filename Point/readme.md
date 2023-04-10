@@ -8,8 +8,13 @@
 # TECP Point script
 When running in conjunction with a meshtastic device will publish default information based on `config.json` and will change color based on GPIO buttons. 
 
-Meshtastic device must have serial enabled. 
-```meshtastic --set serial.enabled true ```
+Meshtastic devices must be configured to talk to eachother, start with installing the [Meshtastic CLI](https://meshtastic.org/docs/software/python/cli/installation)
+
+The full command we use, excluding the pre-shared key:
+
+```
+meshtastic --ch-set name ASN --ch-index 0 --ch-set channel_num 1 --ch-index 0 --ch-set psk <PSK HERE> --ch-medfast --set lora.region EU_868 --set serial.enabled true 
+```
 
 #### Pins are assumed in the program to match the following:
 
